@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 540">
+  <defs>
+    <radialGradient id="shieldFill" cx="50%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#182240"/>
+      <stop offset="100%" stop-color="#090e1c"/>
+    </radialGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="44%" r="46%">
+      <stop offset="0%" stop-color="#f5920022"/>
+      <stop offset="100%" stop-color="#f5920000"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════
+       SHIELD
+  ═══════════════════════════════════════════ -->
+  <path
+    d="M240,16 L454,57 L460,270 C458,375 354,446 240,493
+       C126,446 22,375 20,270 L26,57 Z"
+    fill="url(#shieldFill)"
+    stroke="#f59200"
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+  <!-- Inner accent border -->
+  <path
+    d="M240,32 L438,69 L444,269 C442,364 344,428 240,475
+       C136,428 38,364 36,269 L42,69 Z"
+    fill="none"
+    stroke="#f5920032"
+    stroke-width="1.5"
+  />
+
+  <!-- Soft glow behind trishul -->
+  <ellipse cx="240" cy="218" rx="108" ry="128" fill="url(#coreGlow)"/>
+
+  <!-- ═══════════════════════════════════════════
+       DRONE ARMS
+       Body centre (240,278)  Motor at 86 px at 45°
+       NW(179,217)  NE(301,217)  SW(179,339)  SE(301,339)
+  ═══════════════════════════════════════════ -->
+  <line x1="240" y1="278" x2="179" y2="217" stroke="#f59200" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="240" y1="278" x2="301" y2="217" stroke="#f59200" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="240" y1="278" x2="179" y2="339" stroke="#f59200" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="240" y1="278" x2="301" y2="339" stroke="#f59200" stroke-width="5.5" stroke-linecap="round"/>
+
+  <!-- ═══════════════════════════════════════════
+       PROPELLER BLADES  (two per motor, behind rings)
+       Each blade is an ellipse offset ±17 px from motor hub
+       along the axis perpendicular to that arm.
+       NW/SE pair → rotate(-45)   NE/SW pair → rotate(45)
+  ═══════════════════════════════════════════ -->
+  <!-- NW motor (179,217): perp axis = NE-SW direction -->
+  <ellipse cx="191" cy="205" rx="30" ry="12" fill="#f59200" transform="rotate(-45 191 205)"/>
+  <ellipse cx="167" cy="229" rx="30" ry="12" fill="#f59200" transform="rotate(-45 167 229)"/>
+  <!-- NE motor (301,217): perp axis = SE-NW direction -->
+  <ellipse cx="289" cy="205" rx="30" ry="12" fill="#f59200" transform="rotate(45 289 205)"/>
+  <ellipse cx="313" cy="229" rx="30" ry="12" fill="#f59200" transform="rotate(45 313 229)"/>
+  <!-- SW motor (179,339): perp axis = SE-NW direction -->
+  <ellipse cx="167" cy="327" rx="30" ry="12" fill="#f59200" transform="rotate(45 167 327)"/>
+  <ellipse cx="191" cy="351" rx="30" ry="12" fill="#f59200" transform="rotate(45 191 351)"/>
+  <!-- SE motor (301,339): perp axis = NE-SW direction -->
+  <ellipse cx="313" cy="327" rx="30" ry="12" fill="#f59200" transform="rotate(-45 313 327)"/>
+  <ellipse cx="289" cy="351" rx="30" ry="12" fill="#f59200" transform="rotate(-45 289 351)"/>
+
+  <!-- ═══════════════════════════════════════════
+       MOTOR RINGS  (on top of blades)
+  ═══════════════════════════════════════════ -->
+  <circle cx="179" cy="217" r="16" fill="#0c1525" stroke="#f59200" stroke-width="3"/>
+  <circle cx="301" cy="217" r="16" fill="#0c1525" stroke="#f59200" stroke-width="3"/>
+  <circle cx="179" cy="339" r="16" fill="#0c1525" stroke="#f59200" stroke-width="3"/>
+  <circle cx="301" cy="339" r="16" fill="#0c1525" stroke="#f59200" stroke-width="3"/>
+
+  <!-- ═══════════════════════════════════════════
+       DRONE BODY
+  ═══════════════════════════════════════════ -->
+  <circle cx="240" cy="278" r="27" fill="#0c1525" stroke="#f59200" stroke-width="4"/>
+  <circle cx="240" cy="278" r="14"  fill="none"   stroke="#f59200" stroke-width="2.5"/>
+  <circle cx="240" cy="278" r="6"   fill="#f59200"/>
+
+  <!-- ═══════════════════════════════════════════
+       TRISHUL
+
+       Structure (top to bottom):
+         White arrowhead tips
+         Orange prong shafts
+         Horizontal crossbar
+         Scroll-bracket arms curving DOWN from crossbar ends
+           back to the main shaft
+         Main shaft down to body top (y=251)
+  ═══════════════════════════════════════════ -->
+
+  <!-- Main shaft:  y=102 → y=251 (body top) -->
+  <rect x="233" y="102" width="14" height="149" rx="4" fill="#f59200"/>
+
+  <!-- Crossbar: y=160–172, x=177–303 -->
+  <rect x="177" y="160" width="126" height="12" rx="4" fill="#f59200"/>
+
+  <!-- Scroll brackets: curve downward from crossbar ends to main shaft -->
+  <!-- Left bracket: (183,172) → (240,210) -->
+  <path d="M183,172 C181,196 212,207 240,210"
+    fill="none" stroke="#f59200" stroke-width="12" stroke-linecap="round"/>
+  <!-- Right bracket: (297,172) → (240,210) -->
+  <path d="M297,172 C299,196 268,207 240,210"
+    fill="none" stroke="#f59200" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Side prong shafts: rise from crossbar top upward -->
+  <line x1="183" y1="160" x2="183" y2="107" stroke="#f59200" stroke-width="12" stroke-linecap="round"/>
+  <line x1="297" y1="160" x2="297" y2="107" stroke="#f59200" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- ═══════════════════════════════════════════
+       WHITE SPEARHEAD TIPS
+  ═══════════════════════════════════════════ -->
+  <!-- Centre (tallest) -->
+  <polygon points="240,64  227,102  253,102" fill="white"/>
+  <!-- Left -->
+  <polygon points="183,68  171,107  195,107" fill="white"/>
+  <!-- Right -->
+  <polygon points="297,68  285,107  309,107" fill="white"/>
+</svg>
