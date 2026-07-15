@@ -6,6 +6,7 @@ import EdgeAIWidget       from "./components/EdgeAIWidget.jsx";
 import SpecsSection       from "./components/SpecsSection.jsx";
 import MissionProfiles    from "./components/MissionProfiles.jsx";
 import ProcurementSection from "./components/ProcurementSection.jsx";
+import TeamSection        from "./components/TeamSection.jsx";
 import ContactSection     from "./components/ContactSection.jsx";
 import Footer             from "./components/Footer.jsx";
 
@@ -63,7 +64,7 @@ function BootLoader({ onDone }) {
         <div className="font-mono text-center">
           <div className="text-amber-400 text-xs tracking-[0.4em] mb-1">TRISHUL DYNAMICS</div>
           <div className="text-slate-600 text-[9px] tracking-widest">
-            INITIALISING AEROS COMMAND INTERFACE
+            INITIALISING GARUDA COMMAND INTERFACE
           </div>
         </div>
 
@@ -109,6 +110,9 @@ export default function App() {
 
           <Divider label="// ACQUISITION & COMPLIANCE" />
           <ProcurementSection />
+
+          <Divider label="// THE TEAM" />
+          <TeamSection />
 
           <Divider label="// SECURE COMMUNICATIONS" />
           <ContactSection />

@@ -10,7 +10,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "Positive Indigenisation List (PIL)",
     ref:     "MoD PIL Category — UAV Systems",
     status:  "ELIGIBLE",
-    detail:  "Aeros MK-1 falls under the positive indigenisation list for UAVs ≤25 kg. Fully domestically manufactured. Importation of this category is restricted, creating a mandated government procurement avenue for Indian OEMs.",
+    detail:  "GARUDA Mk-1 falls under the positive indigenisation list for UAVs ≤25 kg. Fully domestically manufactured. Importation of this category is restricted, creating a mandated government procurement avenue for Indian OEMs.",
     icon:    "◈",
     color:   "emerald",
   },
@@ -18,7 +18,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "iDEX (Innovations for Defence Excellence)",
     ref:     "SPRINT-IX · DIO Problem Statement",
     status:  "ELIGIBLE",
-    detail:  "Trishul Dynamics is eligible to apply under iDEX SPRINT-IX and DISC categories for heterogeneous ISR UAS. Funding quantum: up to ₹1.5 Cr per selected startup. MoU with DRDO/DIO on prototype evaluation.",
+    detail:  "Trishul Dynamics is eligible under iDEX DISC (up to ₹1.5 Cr) for prototype evaluation. Next stage: ADITI / iDEX Prime (up to ₹25 Cr) for field trials and first pilot orders. Further scale through DRDO TDF (up to ₹50 Cr). Full non-dilutive grant ladder mapped to each development milestone.",
     icon:    "⬡",
     color:   "amber",
   },
@@ -26,7 +26,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "Make-II (Industry-Funded)",
     ref:     "DPP 2020 · Chapter III · Para 4.3",
     status:  "APPLICABLE",
-    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage — suitable for an already-prototyped system like Aeros MK-1 seeking production order.",
+    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage — suitable for an already-prototyped system like GARUDA Mk-1 seeking production order.",
     icon:    "▲",
     color:   "teal",
   },
@@ -34,7 +34,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "DGCA Unmanned Aircraft System Rules",
     ref:     "UAS Rules 2021 · Sub-3 KG Green Zone",
     status:  "COMPLIANT",
-    detail:  "AUW ≤ 2.8 kg places Aeros MK-1 in the micro-UAS category. Exempt from type certificate requirement in restricted/controlled airspace operations with a valid UAOP. Military deployment under separate operational clearance.",
+    detail:  "AUW ≤ 2.8 kg places GARUDA Mk-1 in the micro-UAS category. Exempt from type certificate requirement in restricted/controlled airspace operations with a valid UAOP. Military deployment under separate operational clearance.",
     icon:    "◉",
     color:   "violet",
   },
@@ -89,31 +89,31 @@ const SUPPLY_CHAIN = [
 
 const ACQUISITION_PATHS = [
   {
-    path:   "iDEX SPRINT",
-    phase:  "Prototype → Pilot",
+    path:     "iDEX DISC",
+    phase:    "2026–27 · Validation",
     timeline: "9–18 months",
-    value:  "≤ ₹1.5 Cr",
-    steps:  ["Submit DISC application", "Evaluation by DIO", "Prototype demo", "Pilot order"],
-    color:  "amber",
-    best:   true,
+    value:    "Up to ₹1.5 Cr",
+    steps:    ["Submit DISC application to DIO", "Evaluation by iDEX evaluators & DRDO labs", "Grant-funded prototype demo", "BSF / Army observer trial"],
+    color:    "amber",
+    best:     true,
   },
   {
-    path:   "Make-II",
-    phase:  "Prototype → Production",
-    timeline: "18–36 months",
-    value:  "Production contract",
-    steps:  ["Submit proposal to SHQ", "Feasibility study", "ToT negotiation", "RFP issuance"],
-    color:  "teal",
-    best:   false,
+    path:     "ADITI / iDEX Prime",
+    phase:    "2027–28 · Pilot",
+    timeline: "18–30 months",
+    value:    "Up to ₹25 Cr",
+    steps:    ["ADITI round application", "Desert field trials", "First paid border pilot (5–10 units)", "Series A ready"],
+    color:    "teal",
+    best:     false,
   },
   {
-    path:   "Fast-Track Procedure",
-    phase:  "Emergency Procurement",
-    timeline: "6–12 months",
-    value:  "Operational need",
-    steps:  ["Operational urgent requirement declared", "Case notified", "Trial evaluation", "Limited order"],
-    color:  "violet",
-    best:   false,
+    path:     "DRDO TDF / Make-II",
+    phase:    "2028–30 · Scale",
+    timeline: "24–36 months",
+    value:    "Up to ₹50 Cr",
+    steps:    ["DRDO Technology Development Fund grant", "MoD tender (PIL mandated domestic)", "Indian Army / paramilitary: 100+ units", "Mk-2 architecture & export roadmap"],
+    color:    "violet",
+    best:     false,
   },
 ];
 
@@ -175,7 +175,7 @@ export default function ProcurementSection() {
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
             Every acquisition pathway mapped. Every compliance criterion pre-verified.
-            Trishul Dynamics has engineered Aeros MK-1 from day one to meet MoD's procurement
+            Trishul Dynamics has engineered GARUDA Mk-1 from day one to meet MoD's procurement
             requirements — not as an afterthought.
           </p>
         </div>
@@ -320,8 +320,8 @@ export default function ProcurementSection() {
           {[
             {
               label:   "UNIT PRICE (INDICATIVE)",
-              value:   "₹ 14–18 Lakhs",
-              sub:     "Per unit, FOB Pune. Volume discounts from Qty 10+.",
+              value:   "₹ 15–30 Lakhs",
+              sub:     "Pilot-batch pricing (5–10 units). Scale orders (100+): ₹25–50 L/unit.",
               color:   "amber",
             },
             {

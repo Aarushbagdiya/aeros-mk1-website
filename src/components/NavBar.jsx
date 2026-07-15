@@ -22,6 +22,7 @@ export default function NavBar() {
     { label: "SPECS",        href: "#specs"        },
     { label: "MISSIONS",     href: "#missions"     },
     { label: "PROCUREMENT",  href: "#procurement"  },
+    { label: "TEAM",         href: "#team"         },
   ];
 
   const handleLink = (href) => {

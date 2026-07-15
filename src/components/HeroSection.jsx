@@ -33,7 +33,7 @@ function TelemetryHUD() {
       {/* header */}
       <div className="flex items-center gap-2 mb-2">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink" />
-        <span className="text-[9px] tracking-widest text-emerald-400">AEROS MK-1 // LIVE TELEMETRY</span>
+        <span className="text-[9px] tracking-widest text-emerald-400">GARUDA Mk-1 // LIVE TELEMETRY</span>
       </div>
       {/* data rows */}
       <div className="border border-amber-500/20 bg-black/60 backdrop-blur-sm p-3 grid grid-cols-3 gap-x-6 gap-y-1.5">
@@ -214,7 +214,7 @@ export default function HeroSection() {
 
             {/* Pre-headline */}
             <p className="font-mono text-[11px] tracking-[0.3em] text-slate-500 mb-3 animate-fade-in-up">
-              // TRISHUL DYNAMICS · PROGRAMME AEROS
+              // TRISHUL DYNAMICS · PROGRAMME GARUDA
             </p>
 
             {/* Main headline */}
@@ -237,8 +237,8 @@ export default function HeroSection() {
                 className="text-base lg:text-lg text-slate-400 leading-relaxed max-w-xl mb-10 animate-fade-in-up"
                 style={{ animationDelay: "0.25s" }}
               >
-                The <strong className="text-white">Aeros MK-1</strong> is India's first morphing
-                hybrid UAV-UGV. It flies, lands, folds its props, swings its servo arms 90°,
+                The <strong className="text-white">GARUDA Mk-1</strong> is India's first morphing
+                hybrid UAV-UGV. It flies, lands, folds its props, swings its servo tilt-arms 90°,
                 and becomes a silent 4-wheel ground rover — then launches again, on command,
                 from any terrain.
               </p>

@@ -287,7 +287,7 @@ export default function EdgeAIWidget() {
             </span>
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-            The Aeros MK-1 runs YOLOv8 object detection on an NVIDIA Jetson Nano — classifying
+            The GARUDA Mk-1 runs YOLOv8 object detection on an NVIDIA Jetson Nano — classifying
             threats, vehicles, and persons at 30 fps with sub-15 ms latency, entirely on-board.
             No network. No cloud. No vulnerability.
           </p>
@@ -390,7 +390,7 @@ export default function EdgeAIWidget() {
               {/* Top HUD bar */}
               <div className="absolute top-0 left-0 right-0 h-7 bg-black/50 backdrop-blur-sm flex items-center justify-between px-3">
                 <div className="flex items-center gap-3 font-mono text-[8px]">
-                  <span className="text-amber-400">AEROS-MK1</span>
+                  <span className="text-amber-400">GARUDA-MK1</span>
                   <span className="text-slate-600">|</span>
                   <span className="text-teal-300">{modeLabels[mode]}</span>
                   <span className="text-slate-600">|</span>

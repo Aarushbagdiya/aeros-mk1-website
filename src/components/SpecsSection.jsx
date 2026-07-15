@@ -37,7 +37,7 @@ const TABS = [
       { key: "Static thrust / motor",  val: "1.6 kg @ 100% throttle", highlight: true },
       { key: "Total thrust",           val: "6.4 kg (2.3× AUW ratio)" },
       { key: "Battery",                val: "6S 5000 mAh LiPo (22.2 V nominal)" },
-      { key: "Flight endurance",       val: "22–28 min (ISR hover profile)" },
+      { key: "Flight endurance",        val: "~40 min (high-density pack, ISR hover)", highlight: true },
       { key: "Drive motors (rover)",   val: "370-type brushed DC, 250 RPM@6V" },
       { key: "Ground endurance",       val: "6+ hours (silent surveillance)", highlight: true },
       { key: "Ground speed (max)",     val: "3.2 km/h" },
@@ -129,7 +129,7 @@ export default function SpecsSection() {
         {/* ── Header ── */}
         <div className="mb-12">
           <p className="font-mono text-[10px] tracking-[0.3em] text-amber-500/60 mb-3">
-            // TECHNICAL DATASHEET · AEROS MK-1 REV-3.2
+            // TECHNICAL DATASHEET · GARUDA Mk-1
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end gap-4 justify-between">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">

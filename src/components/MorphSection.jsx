@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import MorphCanvas3D from "./MorphCanvas3D.jsx";
 
 /* ═══════════════════════════════════════════════════════════════
    MorphSection — Physically-accurate 90° arm-swing animation
@@ -559,15 +560,35 @@ export default function MorphSection() {
 
             {/* ── Canvas ── */}
             <div className="flex-1 min-w-0 flex flex-col gap-2.5">
-              {/* SVG frame */}
+              {/* 3D WebGL Canvas */}
               <div
                 className="relative border border-amber-500/15 bg-[#060610] overflow-hidden"
-                style={{ aspectRatio: `${VB_W}/${VB_H}` }}
+                style={{ aspectRatio: "16/10" }}
               >
-                <MorphCanvas p={p} />
+                <MorphCanvas3D progress={p} />
                 {/* Scanline overlay */}
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.055) 3px,rgba(0,0,0,0.055) 4px)" }} />
+                <div className="absolute inset-0 pointer-events-none z-10"
+                  style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px)" }} />
+                {/* Mode + angle readout overlay */}
+                <div className="absolute top-3 right-4 z-10 text-right font-mono">
+                  <div className="text-[9px] tracking-widest text-amber-500/50">
+                    {p < 0.08 ? "// FLIGHT MODE — ARMS HORIZONTAL"
+                      : p < 0.92 ? "// TRANSITION — SERVOS ACTIVE"
+                      : "// ROVER MODE — ARMS LOCKED 90°"}
+                  </div>
+                  <div className="text-[11px] text-teal-300/70 mt-0.5">
+                    ARM: {String(Math.round(p * 90)).padStart(2,"0")}° / 90°
+                  </div>
+                </div>
+                {/* Mode indicator bottom-left */}
+                <div className="absolute bottom-3 left-4 z-10 flex items-center gap-2 font-mono">
+                  <span className={`w-1.5 h-1.5 rounded-full ${
+                    p < 0.12 ? "bg-amber-400" : p < 0.88 ? "bg-amber-400 animate-blink" : "bg-emerald-400"
+                  }`} />
+                  <span className="text-[9px] tracking-widest text-slate-500">
+                    {p < 0.12 ? "FLT" : p < 0.88 ? "TRN" : "GND"} · GARUDA MK-1 · 3D RENDER
+                  </span>
+                </div>
               </div>
 
               {/* Controls row */}

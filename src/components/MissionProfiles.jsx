@@ -18,7 +18,7 @@ const MISSIONS = [
     challenge:
       "Vast open terrain, extreme heat, GPS-spoofing threats, shifting sand dunes obstructing ground vehicles.",
     solution:
-      "Aeros MK-1 flies to the target zone, lands behind cover, morphs to rover, and conducts a 6-hour silent stakeout. Thermal sees through heat haze. LiDAR maps dunes autonomously.",
+      "GARUDA Mk-1 flies to the target zone, lands behind cover, morphs to rover, and conducts a 6-hour silent stakeout. Thermal sees through heat haze. LiDAR maps dunes autonomously.",
     modes:    ["ISR Hover", "Silent Rover", "Thermal Scan", "Auto-Waypoint"],
     metrics: [
       { label: "Max ambient temp",  val: "55°C" },
@@ -76,7 +76,7 @@ const MISSIONS = [
     challenge:
       "24/7 perimeter security is manpower-intensive, vulnerable to fatigue, and creates predictable patrol patterns that adversaries can exploit.",
     solution:
-      "Aeros MK-1 runs autonomous perimeter loops from a charging pad — flying when needed, quietly rolling when stealth matters. AI alerts the ops room instantly upon classification of any intrusion.",
+      "GARUDA Mk-1 runs autonomous perimeter loops from a charging pad — flying when needed, quietly rolling when stealth matters. AI alerts the ops room instantly upon classification of any intrusion.",
     modes:    ["Autonomous Patrol", "Stealth Rover", "Alert Mode", "Persistent Watch"],
     metrics: [
       { label: "Patrol perimeter",   val: "Up to 4 km" },
@@ -165,7 +165,7 @@ export default function MissionProfiles() {
         {/* ── Header ── */}
         <div className="mb-12 text-center">
           <p className="font-mono text-[10px] tracking-[0.3em] text-amber-500/60 mb-3">
-            // MISSION PROFILES · AEROS MK-1 DEPLOYMENT SCENARIOS
+            // MISSION PROFILES · GARUDA Mk-1 DEPLOYMENT SCENARIOS
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             WHERE IT{" "}
@@ -175,7 +175,7 @@ export default function MissionProfiles() {
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
             From the scorching Thar desert to the frozen heights of the Siachen glacier —
-            the Aeros MK-1 is engineered for every theatre the Indian Armed Forces face.
+            the GARUDA Mk-1 is engineered for every theatre the Indian Armed Forces face.
           </p>
         </div>
 
