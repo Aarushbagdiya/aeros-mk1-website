@@ -29,8 +29,8 @@ const COL_BODY = 0x1a1a2e;
 const COL_ARM = 0x2a2a3a;
 const COL_AMBER = 0xf59e0b;
 const COL_TEAL = 0x2dd4bf;
-const COL_GROUND = 0x06060e;
-const COL_GRID = 0xf59e0b;
+const COL_GROUND = 0x070906; // Very dark green-black base
+const COL_GRID = 0x586b45;   // camo-light
 
 /* ── Helper: create a lattice truss arm ── */
 function createTrussArm(length) {

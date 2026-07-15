@@ -21,6 +21,13 @@ export default {
         emerald: {
           live: "#10b981",
         },
+        camo: {
+          dark:   "#2a3324",
+          base:   "#3d4b31",
+          light:  "#586b45",
+          accent: "#768e59",
+          earth:  "#4c4639",
+        },
       },
       fontFamily: {
         mono:    ["'JetBrains Mono'", "Consolas", "monospace"],

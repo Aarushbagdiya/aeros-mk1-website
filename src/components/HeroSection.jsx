@@ -178,8 +178,8 @@ export default function HeroSection() {
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#06060e] scanlines"
     >
       {/* ── Background layers ── */}
-      {/* Tactical grid */}
-      <div className="absolute inset-0 bg-grid-tactical opacity-100 pointer-events-none" />
+      {/* Camo terrain pattern */}
+      <div className="absolute inset-0 bg-camo-pattern opacity-100 pointer-events-none" />
       {/* Radial vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#06060e_90%)] pointer-events-none" />
       {/* Amber glow source */}
@@ -204,10 +204,10 @@ export default function HeroSection() {
           {/* LEFT — copy */}
           <div className="flex-1 text-left max-w-2xl">
 
-            {/* Mission status badge */}
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-amber-500/25 bg-amber-500/5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-blink" />
-              <span className="text-[10px] font-mono tracking-[0.25em] text-amber-400">
+            {/* Mission status badge (Camo theme) */}
+            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 border border-camo-light/50 bg-camo-dark/80 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-camo-accent animate-blink" />
+              <span className="text-[10px] font-mono tracking-[0.25em] text-camo-light">
                 CLASSIFIED · PROTOTYPE PHASE · PIL ELIGIBLE
               </span>
             </div>
@@ -268,7 +268,7 @@ export default function HeroSection() {
             >
               <a
                 href="#morph"
-                className="flex items-center gap-2 px-7 py-4 bg-amber-500 text-black text-xs font-bold tracking-[0.2em] hover:bg-amber-400 transition-colors duration-200 group"
+                className="flex items-center gap-2 px-7 py-4 bg-camo-light text-white text-xs font-bold tracking-[0.2em] hover:bg-camo-accent transition-colors duration-200 group"
               >
                 SEE THE MORPH
                 <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
