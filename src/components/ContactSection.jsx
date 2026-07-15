@@ -53,7 +53,7 @@ function Corners({ color = "emerald" }) {
 ══════════════════════════════════════════════════════════════ */
 function SuccessPanel({ refId }) {
   return (
-    <section id="contact" className="relative py-28 bg-[#06060e] overflow-hidden">
+    <section id="contact" className="relative py-28 bg-camo-dark overflow-hidden">
       <div className="absolute inset-0 bg-grid-tactical opacity-40 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
 
@@ -217,7 +217,7 @@ export default function ContactSection() {
   const ic = (k) => inputClass(errors, k);
 
   return (
-    <section id="contact" className="relative py-28 bg-[#06060e] overflow-hidden">
+    <section id="contact" className="relative py-28 bg-camo-dark overflow-hidden">
       {/* CSS-only spinner (avoids dependency on Tailwind's conditional keyframe) */}
       <style>{`
         @keyframes td-spin { to { transform: rotate(360deg); } }

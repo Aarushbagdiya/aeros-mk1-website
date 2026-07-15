@@ -34,7 +34,7 @@ export default function NavBar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#06060e]/95 backdrop-blur-lg border-b border-amber-500/20 shadow-[0_2px_40px_rgba(245,158,11,0.06)]"
+          ? "bg-camo-dark/95 backdrop-blur-lg border-b border-amber-500/20 shadow-[0_2px_40px_rgba(245,158,11,0.06)]"
           : "bg-transparent"
       }`}
     >
@@ -122,7 +122,7 @@ export default function NavBar() {
           mobileOpen ? "max-h-80 border-t border-amber-500/20" : "max-h-0"
         }`}
       >
-        <div className="bg-[#06060e]/98 backdrop-blur-lg px-6 py-5 flex flex-col gap-5">
+        <div className="bg-camo-dark/98 backdrop-blur-lg px-6 py-5 flex flex-col gap-5">
           {navLinks.map((link) => (
             <a
               key={link.href}

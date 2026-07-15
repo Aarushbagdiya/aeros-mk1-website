@@ -67,7 +67,7 @@ const COLOR = {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative py-28 bg-[#06060e] overflow-hidden">
+    <section id="team" className="relative py-28 bg-camo-dark overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-grid-fine opacity-50 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />

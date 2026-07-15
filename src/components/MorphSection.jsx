@@ -537,9 +537,9 @@ export default function MorphSection() {
   return (
     <div ref={sectionRef} className="relative h-[320vh]" id="morph">
       {/* Sticky viewport */}
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-[#07070f]">
-        <div className="absolute inset-0 bg-grid-fine opacity-50 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_50%_50%,rgba(245,158,11,0.025),transparent)] pointer-events-none" />
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden bg-camo-dark">
+        <div className="absolute inset-0 bg-camo-pattern opacity-100 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_65%_at_50%_50%,rgba(61,75,49,0.3),transparent)] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-10 py-4">
 
@@ -562,7 +562,7 @@ export default function MorphSection() {
             <div className="flex-1 min-w-0 flex flex-col gap-2.5">
               {/* 3D WebGL Canvas */}
               <div
-                className="relative border border-amber-500/15 bg-[#060610] overflow-hidden"
+                className="relative border border-camo-light/25 bg-camo-base/50 overflow-hidden"
                 style={{ aspectRatio: "16/10" }}
               >
                 <MorphCanvas3D progress={p} />
