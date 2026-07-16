@@ -155,10 +155,10 @@ export default function ProcurementSection() {
   const [activeCompliance, setActiveCompliance] = useState(0);
 
   return (
-    <section id="procurement" className="relative py-28 bg-camo-dark overflow-hidden">
+    <section id="procurement" className="relative py-28 bg-[#07070f] overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-camo-pattern opacity-100 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-camo-light/25 to-transparent" />
+      <div className="absolute inset-0 bg-grid-tactical opacity-60 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
 

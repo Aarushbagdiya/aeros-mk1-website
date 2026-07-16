@@ -5,11 +5,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#1f261b] border-t border-camo-light/30 overflow-hidden">
+    <footer className="relative bg-[#04040a] border-t border-amber-500/10 overflow-hidden">
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-camo-pattern opacity-50 pointer-events-none" />
-      {/* Top green line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-camo-light/40 to-transparent" />
+      <div className="absolute inset-0 bg-grid-fine opacity-30 pointer-events-none" />
+      {/* Top amber line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">

@@ -268,7 +268,7 @@ export default function EdgeAIWidget() {
   const modeIcons  = { hd: "◉", thermal: "▣", lidar: "⬡" };
 
   return (
-    <section id="edge-ai" className="relative py-28 bg-camo-dark overflow-hidden">
+    <section id="edge-ai" className="relative py-28 bg-[#06060e] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-grid-fine opacity-60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(45,212,191,0.03),transparent)] pointer-events-none" />

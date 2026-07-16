@@ -175,13 +175,13 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-camo-dark scanlines"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#06060e] scanlines"
     >
       {/* ── Background layers ── */}
       {/* Camo terrain pattern */}
       <div className="absolute inset-0 bg-camo-pattern opacity-100 pointer-events-none" />
       {/* Radial vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#2a3324_90%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#06060e_90%)] pointer-events-none" />
       {/* Amber glow source */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/4 rounded-full blur-3xl pointer-events-none" />
       {/* Scan line sweep */}
@@ -254,7 +254,7 @@ export default function HeroSection() {
                 { value: "6+ HRS",  label: "Ground Endurance" },
                 { value: "3-IN-1",  label: "Sensor Suite"     },
               ].map((kpi) => (
-                <div key={kpi.label} className="bg-camo-dark/80 backdrop-blur-sm px-4 py-4 text-center">
+                <div key={kpi.label} className="bg-[#06060e] px-4 py-4 text-center">
                   <div className="text-xl lg:text-2xl font-black text-amber-400 font-mono">{kpi.value}</div>
                   <div className="text-[9px] text-slate-500 tracking-widest mt-0.5">{kpi.label}</div>
                 </div>
@@ -315,16 +315,16 @@ export default function HeroSection() {
             <DroneSilhouette />
 
             {/* Floating annotation cards */}
-            <div className="absolute -top-4 -right-4 lg:right-0 bg-camo-base/80 backdrop-blur-sm border border-camo-light/50 px-3 py-2 font-mono">
-              <div className="text-[8px] text-camo-light tracking-widest mb-0.5">SENSOR</div>
+            <div className="absolute -top-4 -right-4 lg:right-0 bg-[#0e0e1a] border border-amber-500/25 px-3 py-2 font-mono">
+              <div className="text-[8px] text-slate-500 tracking-widest mb-0.5">SENSOR</div>
               <div className="text-[10px] text-teal-300">LIDAR · THERMAL · HD</div>
             </div>
-            <div className="absolute bottom-6 -right-4 lg:right-0 bg-camo-base/80 backdrop-blur-sm border border-camo-light/50 px-3 py-2 font-mono">
-              <div className="text-[8px] text-camo-light tracking-widest mb-0.5">AI BRAIN</div>
+            <div className="absolute bottom-6 -right-4 lg:right-0 bg-[#0e0e1a] border border-amber-500/25 px-3 py-2 font-mono">
+              <div className="text-[8px] text-slate-500 tracking-widest mb-0.5">AI BRAIN</div>
               <div className="text-[10px] text-violet-300">JETSON NANO · EDGE</div>
             </div>
-            <div className="absolute bottom-6 -left-4 lg:left-0 bg-camo-base/80 backdrop-blur-sm border border-camo-light/50 px-3 py-2 font-mono">
-              <div className="text-[8px] text-camo-light tracking-widest mb-0.5">FRAME</div>
+            <div className="absolute bottom-6 -left-4 lg:left-0 bg-[#0e0e1a] border border-amber-500/25 px-3 py-2 font-mono">
+              <div className="text-[8px] text-slate-500 tracking-widest mb-0.5">FRAME</div>
               <div className="text-[10px] text-amber-300">CARBON FIBRE</div>
             </div>
           </div>

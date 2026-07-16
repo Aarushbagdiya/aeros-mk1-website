@@ -12,7 +12,7 @@ const MISSIONS = [
     tagline:  "Eyes where convoys can't go.",
     icon:     "◈",
     color:    "amber",
-    gradient: "from-amber-950/60 to-camo-dark",
+    gradient: "from-amber-950/60 to-[#06060e]",
     accent:   "border-amber-500/40 text-amber-400",
     badge_bg: "bg-amber-500/10",
     challenge:
@@ -41,7 +41,7 @@ const MISSIONS = [
     tagline:  "Persistent ISR where boots can't reach.",
     icon:     "▲",
     color:    "teal",
-    gradient: "from-teal-950/50 to-camo-dark",
+    gradient: "from-teal-950/50 to-[#06060e]",
     accent:   "border-teal-400/40 text-teal-300",
     badge_bg: "bg-teal-500/10",
     challenge:
@@ -70,7 +70,7 @@ const MISSIONS = [
     tagline:  "Replace five guards with one platform.",
     icon:     "◎",
     color:    "emerald",
-    gradient: "from-emerald-950/50 to-camo-dark",
+    gradient: "from-emerald-950/50 to-[#06060e]",
     accent:   "border-emerald-500/40 text-emerald-400",
     badge_bg: "bg-emerald-500/10",
     challenge:
@@ -99,7 +99,7 @@ const MISSIONS = [
     tagline:  "Sea-to-shore ISR from a single asset.",
     icon:     "◉",
     color:    "violet",
-    gradient: "from-violet-950/50 to-camo-dark",
+    gradient: "from-violet-950/50 to-[#06060e]",
     accent:   "border-violet-500/40 text-violet-400",
     badge_bg: "bg-violet-500/10",
     challenge:
@@ -155,7 +155,7 @@ export default function MissionProfiles() {
   const c       = COLOR_MAP[mission.color];
 
   return (
-    <section id="missions" className="relative py-28 bg-camo-dark overflow-hidden">
+    <section id="missions" className="relative py-28 bg-[#06060e] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-grid-fine opacity-50 pointer-events-none" />
       <div className={`absolute inset-0 bg-gradient-to-b ${mission.gradient} pointer-events-none transition-all duration-700`} />

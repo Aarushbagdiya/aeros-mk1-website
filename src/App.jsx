@@ -21,7 +21,7 @@ function Divider({ label }) {
       <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
       {label && (
         <div className="relative flex justify-center">
-          <span className="bg-camo-dark px-4 font-mono text-[8px] tracking-widest text-amber-500/30">
+          <span className="bg-[#06060e] px-4 font-mono text-[8px] tracking-widest text-amber-500/30">
             {label}
           </span>
         </div>
@@ -38,7 +38,7 @@ function BootLoader({ onDone }) {
   }, [onDone]);
 
   return (
-    <div className="fixed inset-0 z-[100] bg-camo-dark flex flex-col items-center justify-center gap-6">
+    <div className="fixed inset-0 z-[100] bg-[#06060e] flex flex-col items-center justify-center gap-6">
       <style>{`
         @keyframes boot-cw    { from { transform: rotate(45deg)  } to { transform: rotate(135deg) } }
         @keyframes boot-ccw   { from { transform: rotate(45deg)  } to { transform: rotate(-45deg) } }
