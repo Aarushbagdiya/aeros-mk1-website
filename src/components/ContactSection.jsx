@@ -30,8 +30,8 @@ const ROLES = [
 /* ── Shared style helpers ── */
 const inputClass = (errors, k) =>
   `w-full bg-[#0a0a14] border ${
-    errors[k] ? "border-red-500/60" : "border-camo-light/30"
-  } text-slate-200 text-sm px-4 py-3 font-mono placeholder-slate-700 focus:outline-none focus:border-camo-accent/80 transition-colors`;
+    errors[k] ? "border-red-500/60" : "border-amber-500/15"
+  } text-slate-200 text-sm px-4 py-3 font-mono placeholder-slate-700 focus:outline-none focus:border-amber-500/50 transition-colors`;
 
 const labelClass = "block font-mono text-[9px] tracking-widest text-slate-500 mb-1.5";
 
@@ -232,8 +232,8 @@ export default function ContactSection() {
       `}</style>
 
       {/* Background */}
-      <div className="absolute inset-0 bg-camo-pattern opacity-100 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-camo-light/50 to-transparent" />
+      <div className="absolute inset-0 bg-grid-tactical opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/25 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
 
@@ -364,13 +364,13 @@ export default function ContactSection() {
             </div>
 
             {/* Consent */}
-            <div className="border border-camo-light/20 bg-camo-dark/20 p-4">
+            <div className="border border-amber-500/10 bg-amber-500/[0.03] p-4">
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={form.consent}
                   onChange={set("consent")}
-                  className="mt-1 accent-camo-accent"
+                  className="mt-1 accent-amber-500"
                 />
                 <span className="text-[11px] text-slate-400 leading-relaxed">
                   I confirm I am a verified professional making this enquiry in an official
@@ -428,8 +428,8 @@ export default function ContactSection() {
           <div className="lg:col-span-2 flex flex-col gap-4">
 
             {/* Contact info */}
-            <div className="border border-camo-light/25 bg-[#09090f] p-6">
-              <div className="font-mono text-[9px] tracking-widest text-camo-light mb-4">
+            <div className="border border-amber-500/15 bg-[#09090f] p-6">
+              <div className="font-mono text-[9px] tracking-widest text-amber-500/60 mb-4">
                 DIRECT CONTACT
               </div>
               <div className="space-y-4">
@@ -470,8 +470,8 @@ export default function ContactSection() {
             </div>
 
             {/* Quick links */}
-            <div className="border border-camo-light/25 bg-[#09090f] p-6">
-              <div className="font-mono text-[9px] tracking-widest text-camo-light mb-3">
+            <div className="border border-amber-500/15 bg-[#09090f] p-6">
+              <div className="font-mono text-[9px] tracking-widest text-amber-500/60 mb-3">
                 QUICK ACCESS
               </div>
               <div className="space-y-2">
