@@ -661,35 +661,6 @@ export default function MorphSection() {
                 );
               })}
 
-              {/* Kinematic data table */}
-              <div className="border border-slate-800 bg-[#09090f] p-4">
-                <div className="font-mono text-[8px] tracking-widest text-slate-600 mb-2.5">
-                  KINEMATIC PARAMETERS
-                </div>
-                <div className="space-y-1.5">
-                  {[
-                    ["Arm swing range",  "0° → 90°"],
-                    ["Swing time",       "1.8 s"],
-                    ["Servo torque",     "20 kg·cm (×4)"],
-                    ["Pivot axis",       "Lateral roll axis"],
-                    ["Prop fold mode",   "Drag-fold (auto)"],
-                    ["Fold clearance",   "≤ 11 cm"],
-                    ["Body clearance",   "~95 mm AGL"],
-                    ["Trigger",          "MAVLink CMD #2520"],
-                    ["Lock mechanism",   "Detent + servo hold"],
-                  ].map(([k, v]) => (
-                    <div key={k} className="flex justify-between items-baseline">
-                      <span className="text-[10px] text-slate-500">{k}</span>
-                      <span className="font-mono text-[10px] text-amber-300/75 text-right ml-2">{v}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <a href="#contact"
-                className="block text-center py-2.5 border border-amber-500/35 text-amber-400 text-[10px] font-mono tracking-[0.15em] hover:bg-amber-500/8 transition-colors">
-                REQUEST MECHANISM DEMO →
-              </a>
             </div>
           </div>
         </div>
