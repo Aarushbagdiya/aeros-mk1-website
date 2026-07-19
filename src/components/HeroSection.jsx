@@ -4,53 +4,6 @@ import { useState, useEffect, useRef } from "react";
    HeroSection — Full-screen command-centre hero
    ───────────────────────────────────────────────────────────── */
 
-/* Tiny telemetry readout displayed bottom-left of the hero */
-function TelemetryHUD() {
-  const [tick, setTick] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setTick((t) => t + 1), 1200);
-    return () => clearInterval(id);
-  }, []);
-
-  const altitude  = (312 + Math.sin(tick * 0.7) * 8).toFixed(1);
-  const velocity  = (24.6 + Math.cos(tick * 0.5) * 1.2).toFixed(1);
-  const battery   = Math.max(87, 92 - tick % 12);
-  const linkQual  = Math.min(100, 96 + (tick % 5));
-  const heading   = ((tick * 3) % 360).toString().padStart(3, "0");
-
-  const rows = [
-    { label: "ALT",   value: `${altitude} m`,     color: "text-amber-400" },
-    { label: "SPD",   value: `${velocity} m/s`,   color: "text-amber-400" },
-    { label: "HDG",   value: `${heading}°`,        color: "text-teal-300"  },
-    { label: "PWR",   value: `${battery}%`,        color: battery > 80 ? "text-emerald-400" : "text-red-400" },
-    { label: "LINK",  value: `${linkQual}%`,       color: "text-emerald-400" },
-    { label: "MODE",  value: "ISR / AUTO",         color: "text-violet-400" },
-  ];
-
-  return (
-    <div className="relative z-10 font-mono">
-      {/* header */}
-      <div className="flex items-center gap-2 mb-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink" />
-        <span className="text-[9px] tracking-widest text-emerald-400">AEROS MK-1 // LIVE TELEMETRY</span>
-      </div>
-      {/* data rows */}
-      <div className="border border-amber-500/20 bg-black/60 backdrop-blur-sm p-3 grid grid-cols-3 gap-x-6 gap-y-1.5">
-        {rows.map((r) => (
-          <div key={r.label} className="flex flex-col">
-            <span className="text-[8px] text-slate-500 tracking-widest">{r.label}</span>
-            <span className={`text-[11px] ${r.color}`}>{r.value}</span>
-          </div>
-        ))}
-      </div>
-      {/* bottom timestamp */}
-      <div className="text-[8px] text-slate-600 mt-1 font-mono">
-        UTC {new Date().toISOString().slice(11, 19)} · ELRS {(tick % 2 === 0 ? 22 : 21)}KM LINK
-      </div>
-    </div>
-  );
-}
 
 /* Animated corner crosshairs drawn with SVG */
 function CrosshairCorner({ pos = "tl" }) {
@@ -283,31 +236,7 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Compliance strip */}
-            <div
-              className="mt-10 flex flex-wrap gap-3 animate-fade-in-up"
-              style={{ animationDelay: "0.55s" }}
-            >
-              {[
-                "iDEX SPRINT-IX",
-                "Make-II Category",
-                "PIL — Positive List",
-                "DGCA ≤25 KG",
-                "FMSS Compliant",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[9px] px-2.5 py-1 border border-slate-700/80 text-slate-500 font-mono tracking-widest"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
 
-            {/* Telemetry HUD — inline below compliance strip */}
-            <div className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.65s" }}>
-              <TelemetryHUD />
-            </div>
           </div>
 
           {/* RIGHT — drone visualisation */}
