@@ -39,56 +39,76 @@ function DroneSilhouette() {
         {/* glowing core */}
         <div className="absolute w-16 h-16 rounded-full bg-amber-500/10 blur-xl animate-glow-pulse" />
 
-        {/* drone body SVG */}
+        {/* Detailed tactical drone body SVG */}
         <svg
-          width="220" height="220" viewBox="0 0 220 220"
+          width="260" height="260" viewBox="0 0 260 260"
           fill="none" xmlns="http://www.w3.org/2000/svg"
           className="relative z-10"
         >
-          {/* Central fuselage */}
-          <rect x="95" y="90" width="30" height="40" rx="4"
-            fill="#1a1a2e" stroke="rgba(245,158,11,0.7)" strokeWidth="1.5" />
-          {/* Camera dome */}
-          <ellipse cx="110" cy="135" rx="10" ry="7"
-            fill="#0e0e1a" stroke="rgba(45,212,191,0.6)" strokeWidth="1" />
-          {/* Camera lens */}
-          <circle cx="110" cy="135" r="4" fill="#2dd4bf" opacity="0.4" />
+          {/* Hexagonal / Tactical Fuselage */}
+          <path d="M110 90 L150 90 L165 130 L150 170 L110 170 L95 130 Z" fill="#1a1a2e" stroke="rgba(245,158,11,0.8)" strokeWidth="2" />
+          {/* Inner core detailing */}
+          <path d="M117 98 L143 98 L154 130 L143 162 L117 162 L106 130 Z" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" />
+          
+          {/* AI Brain glowing core */}
+          <circle cx="130" cy="130" r="12" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.6)" strokeWidth="1" />
+          <circle cx="130" cy="130" r="5" fill="#8b5cf6" className="animate-pulse" />
+          <path d="M130 112 L130 118 M130 142 L130 148 M112 130 L118 130 M142 130 L148 130" stroke="rgba(139,92,246,0.8)" strokeWidth="1.5" />
+          
+          {/* Front Camera/Thermal Payload (facing down on screen) */}
+          <path d="M115 170 L145 170 L140 188 L120 188 Z" fill="#0e0e1a" stroke="rgba(45,212,191,0.7)" strokeWidth="1.5" />
+          <ellipse cx="130" cy="180" rx="8" ry="4" fill="#2dd4bf" opacity="0.6" />
+          <circle cx="130" cy="180" r="2" fill="#fff" opacity="0.9" />
+          
+          {/* Top LIDAR Scanner */}
+          <rect x="122" y="78" width="16" height="12" rx="2" fill="#1a1a2e" stroke="rgba(45,212,191,0.7)" strokeWidth="1.5" />
+          <line x1="126" y1="84" x2="134" y2="84" stroke="#2dd4bf" strokeWidth="2" className="animate-pulse" />
+          
+          {/* Structural Arms */}
+          {/* FL Arm */}
+          <path d="M102 110 L60 70 L40 70" fill="none" stroke="rgba(245,158,11,0.7)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M106 114 L70 78" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" />
+          {/* FR Arm */}
+          <path d="M158 110 L200 70 L220 70" fill="none" stroke="rgba(245,158,11,0.7)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M154 114 L190 78" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" />
+          {/* RL Arm */}
+          <path d="M102 150 L60 190 L40 190" fill="none" stroke="rgba(245,158,11,0.7)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M106 146 L70 182" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" />
+          {/* RR Arm */}
+          <path d="M158 150 L200 190 L220 190" fill="none" stroke="rgba(245,158,11,0.7)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M154 146 L190 182" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" />
 
-          {/* Arms — morphed 90° down into rover config at rest = flight config here */}
-          {/* Front-Left arm */}
-          <line x1="95" y1="100" x2="55" y2="70" stroke="rgba(245,158,11,0.6)" strokeWidth="2" strokeLinecap="round"/>
-          {/* Front-Right arm */}
-          <line x1="125" y1="100" x2="165" y2="70" stroke="rgba(245,158,11,0.6)" strokeWidth="2" strokeLinecap="round"/>
-          {/* Rear-Left arm */}
-          <line x1="95" y1="120" x2="55" y2="150" stroke="rgba(245,158,11,0.6)" strokeWidth="2" strokeLinecap="round"/>
-          {/* Rear-Right arm */}
-          <line x1="125" y1="120" x2="165" y2="150" stroke="rgba(245,158,11,0.6)" strokeWidth="2" strokeLinecap="round"/>
-
-          {/* Motor mounts */}
-          {[[55,70],[165,70],[55,150],[165,150]].map(([cx,cy], i) => (
+          {/* Rotors / Propellers */}
+          {[[40,70],[220,70],[40,190],[220,190]].map(([cx,cy], i) => (
             <g key={i}>
-              <circle cx={cx} cy={cy} r="10"
-                fill="#0e0e1a" stroke="rgba(245,158,11,0.5)" strokeWidth="1.5" />
-              <circle cx={cx} cy={cy} r="5" fill="rgba(245,158,11,0.15)" />
-              {/* Prop blades */}
-              <ellipse cx={cx - 14} cy={cy} rx="12" ry="2.5"
-                fill="rgba(245,158,11,0.25)" transform={`rotate(-15,${cx},${cy})`} />
-              <ellipse cx={cx + 14} cy={cy} rx="12" ry="2.5"
-                fill="rgba(245,158,11,0.25)" transform={`rotate(-15,${cx},${cy})`} />
+              {/* Motor mount hexagonal base */}
+              <polygon points={`${cx},${cy-7} ${cx+6},${cy-3.5} ${cx+6},${cy+3.5} ${cx},${cy+7} ${cx-6},${cy+3.5} ${cx-6},${cy-3.5}`} fill="#1a1a2e" stroke="rgba(245,158,11,0.9)" strokeWidth="1.5" />
+              {/* Prop guards */}
+              <circle cx={cx} cy={cy} r="22" fill="none" stroke="rgba(245,158,11,0.15)" strokeWidth="2" />
+              <circle cx={cx} cy={cy} r="18" fill="none" stroke="rgba(245,158,11,0.3)" strokeWidth="1" strokeDasharray="4 4" />
+              {/* Spinning prop effect (3 blades) */}
+              <g className="animate-spin" style={{ transformOrigin: `${cx}px ${cy}px`, animationDuration: "3s", animationTimingFunction: "linear" }}>
+                <path d={`M${cx} ${cy} L${cx} ${cy-18} M${cx} ${cy} L${cx-16} ${cy+9} M${cx} ${cy} L${cx+16} ${cy+9}`} stroke="rgba(245,158,11,0.4)" strokeWidth="4" strokeLinecap="round" />
+              </g>
             </g>
           ))}
 
-          {/* Landing struts (wheel stubs) */}
-          {[[75,158],[145,158]].map(([cx,cy], i) => (
+          {/* Morphing Rover Wheels / Treads (tucked close to fuselage) */}
+          {[[85,100],[175,100],[85,160],[175,160]].map(([cx,cy], i) => (
             <g key={i}>
-              <rect x={cx - 8} y={cy} width="16" height="6" rx="3"
-                fill="#1a1a2e" stroke="rgba(45,212,191,0.4)" strokeWidth="1" />
+              <rect x={cx - 6} y={cy - 16} width="12" height="32" rx="3" fill="#09090f" stroke="rgba(45,212,191,0.6)" strokeWidth="1.5" />
+              {/* Tread pattern lines */}
+              {[cy-10, cy-5, cy, cy+5, cy+10].map(yLine => (
+                <line key={yLine} x1={cx - 6} y1={yLine} x2={cx + 6} y2={yLine} stroke="rgba(45,212,191,0.3)" strokeWidth="1" />
+              ))}
             </g>
           ))}
-
-          {/* Sensor array indicator lines */}
-          <line x1="110" y1="90" x2="110" y2="78" stroke="rgba(45,212,191,0.4)" strokeWidth="1" strokeDasharray="2 2"/>
-          <circle cx="110" cy="75" r="3" fill="none" stroke="rgba(45,212,191,0.6)" strokeWidth="1"/>
+          
+          {/* Target lock / UI overlay elements */}
+          <path d="M20 20 L40 20 M20 20 L20 40" fill="none" stroke="rgba(245,158,11,0.5)" strokeWidth="1.5" />
+          <path d="M240 20 L220 20 M240 20 L240 40" fill="none" stroke="rgba(245,158,11,0.5)" strokeWidth="1.5" />
+          <path d="M20 240 L40 240 M20 240 L20 220" fill="none" stroke="rgba(245,158,11,0.5)" strokeWidth="1.5" />
+          <path d="M240 240 L220 240 M240 240 L240 220" fill="none" stroke="rgba(245,158,11,0.5)" strokeWidth="1.5" />
         </svg>
 
         {/* ping rings */}
