@@ -5,25 +5,25 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Static detections - coordinates measured from source images (1376×768) ── */
+/* ── Detections calibrated via PIL overlay on source images (1376×768) ── */
 const MODE_DETECTIONS = {
   hd: [
-    // Left Humvee (closer, lower-left on the road curve)
-    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 35.5, y: 69,   w: 8.7,  h: 11.7 },
-    // Right Humvee (farther up the road, slightly above-right)
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 44,   y: 63.8, w: 6.5,  h: 10.4 },
-    // Personnel figure walking left of the vehicles
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 30.5, y: 74.9, w: 1.5,  h: 5.9 },
-    // Personnel figure walking next to first
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 33,   y: 74.2, w: 1.5,  h: 5.9 },
+    // Left Humvee on road curve (verified v4)
+    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 44.5, y: 80,   w: 6,   h: 7.5 },
+    // Right Humvee farther up road (verified v4)
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 52.5, y: 74,   w: 5,   h: 6.5 },
+    // Person walking left of vehicles (verified v4)
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 37,   y: 84,   w: 1.2, h: 4.5 },
+    // Second person (verified v4)
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 39.5, y: 83,   w: 1.2, h: 4.5 },
   ],
   thermal: [
-    // Bright glowing Humvee in the center of frame
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 35.5, y: 25.4, w: 20.3, h: 50.8 },
-    // Taller personnel figure walking right of vehicle
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 56.7, y: 27.3, w: 5.8,  h: 49.5 },
-    // Shorter/rightmost personnel figure
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 63.2, y: 33.9, w: 6.5,  h: 44.3 },
+    // Bright glowing Humvee body (verified v6)
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 40,   y: 26,   w: 18,  h: 52 },
+    // Taller walking personnel right of vehicle (verified v6)
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 63,   y: 22,   w: 6.5, h: 56 },
+    // Shorter rightmost personnel (verified v6)
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 74,   y: 27,   w: 8,   h: 50 },
   ],
   lidar: []
 };
