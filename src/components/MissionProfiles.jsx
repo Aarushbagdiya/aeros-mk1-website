@@ -258,22 +258,7 @@ export default function MissionProfiles() {
               </div>
             </div>
 
-            {/* Capability matrix */}
-            <div>
-              <div className="font-mono text-[9px] tracking-widest text-slate-600 mb-3">
-                CAPABILITY MATRIX
-              </div>
-              <div className="space-y-2.5">
-                {mission.capability.map((cap) => (
-                  <CapabilityBar
-                    key={cap.name}
-                    name={cap.name}
-                    score={cap.score}
-                    color={mission.color}
-                  />
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* Metrics sidebar */}
@@ -295,39 +280,7 @@ export default function MissionProfiles() {
               </div>
             </div>
 
-            {/* Deployment diagram placeholder */}
-            <div className="border border-amber-500/10 bg-[#09090f] p-6 flex-1 flex flex-col">
-              <div className="font-mono text-[9px] tracking-widest text-slate-600 mb-4">
-                DEPLOYMENT CONCEPT
-              </div>
-              {/* Simple mission flowchart */}
-              <div className="flex flex-col gap-2 flex-1">
-                {[
-                  { step: "01", label: "LAUNCH",    icon: "↑", color: c.text },
-                  { step: "02", label: "FLY TO AO", icon: "→", color: "text-slate-400" },
-                  { step: "03", label: "LAND",       icon: "↓", color: "text-slate-400" },
-                  { step: "04", label: "MORPH",      icon: "⟳", color: c.text },
-                  { step: "05", label: "STAKEOUT",   icon: "◉", color: "text-emerald-400" },
-                  { step: "06", label: "RELAUNCH",   icon: "↑", color: c.text },
-                ].map((step, i, arr) => (
-                  <div key={step.step} className="flex items-center gap-3">
-                    <div className={`font-mono text-xs ${step.color} flex-shrink-0 w-5`}>{step.icon}</div>
-                    <div className="font-mono text-[9px] text-slate-400 tracking-widest flex-1">{step.label}</div>
-                    <div className="font-mono text-[8px] text-slate-700">{step.step}</div>
-                    {i < arr.length - 1 && (
-                      <div className="absolute left-[31px] mt-6 w-px h-3 bg-slate-800" />
-                    )}
-                  </div>
-                ))}
-              </div>
-              {/* CTA */}
-              <a
-                href="#contact"
-                className={`mt-6 block text-center py-2.5 border ${c.border} ${c.text} ${c.hoverBg} text-[10px] font-mono tracking-[0.15em] transition-colors`}
-              >
-                REQUEST MISSION BRIEF →
-              </a>
-            </div>
+
           </div>
         </div>
       </div>
