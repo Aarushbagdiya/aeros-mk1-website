@@ -8,22 +8,24 @@ import { useState, useEffect, useRef } from "react";
 /* ── Detections verified via percentage grid overlay on source images (1376×768) ── */
 const MODE_DETECTIONS = {
   hd: [
-    // Left Humvee on road curve: left edge at 43%, top at 78%
+    // Left Humvee on road curve
     { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 43, y: 78, w: 7, h: 9 },
-    // Right Humvee farther up: left edge at 50%, top at 73%
+    // Right Humvee farther up
     { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 50, y: 73, w: 6, h: 7 },
-    // Person 1 walking on road
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 34, y: 82, w: 1.5, h: 5 },
+    // Person 1 walking on road near left vehicle
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 39, y: 84, w: 1.5, h: 5 },
     // Person 2
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 37, y: 81, w: 1.5, h: 5 },
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 42, y: 83, w: 1.5, h: 5 },
   ],
   thermal: [
     // Humvee body
     { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 49, y: 35, w: 16, h: 47 },
+    // Middle person (between vehicle and taller person)
+    { id: 8, label: "PERSONNEL", conf: 0.94, cls: "hostile", x: 66, y: 40, w: 5,  h: 42 },
     // Taller person
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 70, y: 33, w: 7,  h: 49 },
-    // Shorter person
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 80, y: 36, w: 7,  h: 46 },
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 73, y: 33, w: 7,  h: 49 },
+    // Shorter rightmost person
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 83, y: 36, w: 7,  h: 46 },
   ],
   lidar: []
 };
