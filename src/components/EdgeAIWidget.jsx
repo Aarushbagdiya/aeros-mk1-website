@@ -5,12 +5,21 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Static detections (no uncontrollable drift, just slight jitter in CSS if needed) ── */
-const INITIAL_DETECTIONS = [
-  { id: 1, label: "PERSONNEL",  conf: 0.97, cls: "hostile", x: 40, y: 75, w: 6,  h: 12, color: "#ef4444" },
-  { id: 2, label: "VEHICLE",    conf: 0.91, cls: "unknown", x: 60, y: 65, w: 12, h: 8,  color: "#f59e0b" },
-  { id: 3, label: "PERSONNEL",  conf: 0.88, cls: "friendly",x: 48, y: 72, w: 5,  h: 10, color: "#10b981" },
-];
+/* ── Static detections specific to the generated backgrounds ── */
+const MODE_DETECTIONS = {
+  hd: [
+    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 43, y: 75, w: 7, h: 6 },
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 49, y: 70, w: 6, h: 5 },
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 34, y: 81, w: 4, h: 5 },
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 38, y: 79, w: 4, h: 5 },
+  ],
+  thermal: [
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 28, y: 20, w: 38, h: 42 },
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 68, y: 18, w: 8,  h: 38 },
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 79, y: 26, w: 10, h: 42 },
+  ],
+  lidar: []
+};
 
 const CLASS_COLOURS = {
   hostile:  "border-red-500   text-red-400   bg-red-500/10",
@@ -105,7 +114,8 @@ function CentreReticle({ mode }) {
 
 /* Telemetry sidebar */
 function TelemetrySidebar({ mode, tick }) {
-  const detCount = mode === "lidar" ? "N/A" : INITIAL_DETECTIONS.length;
+  const currentDetections = MODE_DETECTIONS[mode] || [];
+  const detCount = mode === "lidar" ? "N/A" : currentDetections.length;
   const fps      = mode === "lidar" ? "10" : "30";
   const latency  = (12 + (tick % 8)).toString();
 
@@ -135,7 +145,15 @@ function TelemetrySidebar({ mode, tick }) {
         <div className="text-2xl text-amber-400 font-black">{detCount}</div>
         <div className="text-[8px] text-slate-600">OBJECTS TRACKED</div>
         <div className="mt-2 space-y-1">
-          {Object.entries({ hostile: 1, unknown: 1, friendly: 1, poi: 1 }).map(([cls, n]) => (
+          {Object.entries(
+            currentDetections.reduce(
+              (acc, det) => {
+                acc[det.cls] = (acc[det.cls] || 0) + 1;
+                return acc;
+              },
+              { hostile: 0, unknown: 0, friendly: 0, poi: 0 }
+            )
+          ).map(([cls, n]) => (
             <div key={cls} className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <div className={`w-1.5 h-1.5 rounded-full ${
@@ -179,13 +197,17 @@ function TelemetrySidebar({ mode, tick }) {
       <div>
         <div className="text-[8px] text-amber-500/60 tracking-widest mb-1.5">CONFIDENCE</div>
         <div className="flex items-end gap-0.5 h-12">
-          {[0.97, 0.91, 0.88, 0.99].map((c, i) => (
-            <div key={i} className="flex-1 bg-amber-500/20 relative">
+          {currentDetections.map((det, i) => (
+            <div key={i} className="flex-1 bg-amber-500/20 relative group">
               <div
-                className="absolute bottom-0 left-0 right-0 bg-amber-500/70"
-                style={{ height: `${c * 100}%` }}
+                className="absolute bottom-0 left-0 right-0 bg-amber-500/70 transition-all"
+                style={{ height: `${det.conf * 100}%` }}
               />
             </div>
+          ))}
+          {/* Fill empty slots if less than 4 detections */}
+          {Array.from({ length: Math.max(0, 4 - currentDetections.length) }).map((_, i) => (
+            <div key={`empty-${i}`} className="flex-1 bg-amber-500/10 relative" />
           ))}
         </div>
         <div className="flex justify-between text-[7px] text-slate-600 mt-0.5">
@@ -292,7 +314,7 @@ export default function EdgeAIWidget() {
               {mode === "thermal" && <ThermalOverlay />}
 
               {/* Bounding boxes */}
-              {INITIAL_DETECTIONS.map((det) => (
+              {(MODE_DETECTIONS[mode] || []).map((det) => (
                 <BoundingBox key={det.id} det={det} mode={mode} />
               ))}
 
