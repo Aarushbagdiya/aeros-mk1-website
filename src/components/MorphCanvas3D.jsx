@@ -4,7 +4,7 @@ import * as THREE from "three";
 /* ═══════════════════════════════════════════════════════════════
    MorphCanvas3D — Three.js WebGL morph animation
    ═══════════════════════════════════════════════════════════════
-   Renders the GARUDA MK-1 drone-to-rover transformation
+   Renders the AEROS MK-1 drone-to-rover transformation
    in full 3D with:
    • Dark tactical environment + grid floor
    • 4 lattice truss arms with pivot animation

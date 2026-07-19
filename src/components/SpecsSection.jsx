@@ -129,7 +129,7 @@ export default function SpecsSection() {
         {/* ── Header ── */}
         <div className="mb-12">
           <p className="font-mono text-[10px] tracking-[0.3em] text-amber-500/60 mb-3">
-            // TECHNICAL DATASHEET · GARUDA Mk-1
+            // TECHNICAL DATASHEET · AEROS MK-1
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end gap-4 justify-between">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">

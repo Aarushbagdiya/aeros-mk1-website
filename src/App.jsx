@@ -64,7 +64,7 @@ function BootLoader({ onDone }) {
         <div className="font-mono text-center">
           <div className="text-amber-400 text-xs tracking-[0.4em] mb-1">TRISHUL DYNAMICS</div>
           <div className="text-slate-600 text-[9px] tracking-widest">
-            INITIALISING GARUDA COMMAND INTERFACE
+            INITIALISING AEROS COMMAND INTERFACE
           </div>
         </div>
 

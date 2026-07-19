@@ -586,7 +586,7 @@ export default function MorphSection() {
                     p < 0.12 ? "bg-amber-400" : p < 0.88 ? "bg-amber-400 animate-blink" : "bg-emerald-400"
                   }`} />
                   <span className="text-[9px] tracking-widest text-slate-500">
-                    {p < 0.12 ? "FLT" : p < 0.88 ? "TRN" : "GND"} · GARUDA MK-1 · 3D RENDER
+                    {p < 0.12 ? "FLT" : p < 0.88 ? "TRN" : "GND"} · AEROS MK-1 · 3D RENDER
                   </span>
                 </div>
               </div>

@@ -101,7 +101,7 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500/40" />
             <span className="font-mono text-[9px] text-slate-700 tracking-widest">
-              GARUDA Mk-1 · PROTOTYPE PHASE · FOR AUTHORISED EYES ONLY
+              AEROS MK-1 · PROTOTYPE PHASE · FOR AUTHORISED EYES ONLY
             </span>
           </div>
         </div>

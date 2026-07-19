@@ -10,7 +10,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "Positive Indigenisation List (PIL)",
     ref:     "MoD PIL Category — UAV Systems",
     status:  "ELIGIBLE",
-    detail:  "GARUDA Mk-1 falls under the positive indigenisation list for UAVs ≤25 kg. Fully domestically manufactured. Importation of this category is restricted, creating a mandated government procurement avenue for Indian OEMs.",
+    detail:  "AEROS MK-1 falls under the positive indigenisation list for UAVs ≤25 kg. Fully domestically manufactured. Importation of this category is restricted, creating a mandated government procurement avenue for Indian OEMs.",
     icon:    "◈",
     color:   "emerald",
   },
@@ -26,7 +26,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "Make-II (Industry-Funded)",
     ref:     "DPP 2020 · Chapter III · Para 4.3",
     status:  "APPLICABLE",
-    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage — suitable for an already-prototyped system like GARUDA Mk-1 seeking production order.",
+    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage — suitable for an already-prototyped system like AEROS MK-1 seeking production order.",
     icon:    "▲",
     color:   "teal",
   },
@@ -34,7 +34,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "DGCA Unmanned Aircraft System Rules",
     ref:     "UAS Rules 2021 · Sub-3 KG Green Zone",
     status:  "COMPLIANT",
-    detail:  "AUW ≤ 2.8 kg places GARUDA Mk-1 in the micro-UAS category. Exempt from type certificate requirement in restricted/controlled airspace operations with a valid UAOP. Military deployment under separate operational clearance.",
+    detail:  "AUW ≤ 2.8 kg places AEROS MK-1 in the micro-UAS category. Exempt from type certificate requirement in restricted/controlled airspace operations with a valid UAOP. Military deployment under separate operational clearance.",
     icon:    "◉",
     color:   "violet",
   },
@@ -175,7 +175,7 @@ export default function ProcurementSection() {
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
             Every acquisition pathway mapped. Every compliance criterion pre-verified.
-            Trishul Dynamics has engineered GARUDA Mk-1 from day one to meet MoD's procurement
+            Trishul Dynamics has engineered AEROS MK-1 from day one to meet MoD's procurement
             requirements — not as an afterthought.
           </p>
         </div>
