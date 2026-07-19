@@ -5,12 +5,11 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Detection objects that drift across the viewport ── */
+/* ── Static detections (no uncontrollable drift, just slight jitter in CSS if needed) ── */
 const INITIAL_DETECTIONS = [
-  { id: 1, label: "PERSONNEL",  conf: 0.97, cls: "hostile", x: 15, y: 25, w: 12, h: 22, vx: 0.04,  vy: 0.01,  color: "#ef4444" },
-  { id: 2, label: "VEHICLE",    conf: 0.91, cls: "unknown", x: 55, y: 50, w: 22, h: 14, vx: -0.03, vy: 0.02,  color: "#f59e0b" },
-  { id: 3, label: "PERSONNEL",  conf: 0.88, cls: "friendly",x: 75, y: 30, w: 10, h: 20, vx: 0.02,  vy: -0.01, color: "#10b981" },
-  { id: 4, label: "STRUCTURE",  conf: 0.99, cls: "poi",     x: 35, y: 60, w: 30, h: 18, vx: 0,     vy: 0,     color: "#8b5cf6" },
+  { id: 1, label: "PERSONNEL",  conf: 0.97, cls: "hostile", x: 40, y: 75, w: 6,  h: 12, color: "#ef4444" },
+  { id: 2, label: "VEHICLE",    conf: 0.91, cls: "unknown", x: 60, y: 65, w: 12, h: 8,  color: "#f59e0b" },
+  { id: 3, label: "PERSONNEL",  conf: 0.88, cls: "friendly",x: 48, y: 72, w: 5,  h: 10, color: "#10b981" },
 ];
 
 const CLASS_COLOURS = {
@@ -20,64 +19,10 @@ const CLASS_COLOURS = {
   poi:      "border-violet-500 text-violet-400 bg-violet-500/10",
 };
 
-/* Tiny LiDAR point-cloud dots */
-function PointCloud() {
-  const points = useRef(
-    Array.from({ length: 120 }, (_, i) => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      r: Math.random() * 2 + 0.5,
-      o: Math.random() * 0.8 + 0.2,
-      d: (Math.random() * 8 + 1).toFixed(1), // depth in metres
-    }))
-  );
-
-  return (
-    <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-      {points.current.map((p, i) => (
-        <circle
-          key={i}
-          cx={p.x}
-          cy={p.y}
-          r={p.r * 0.3}
-          fill={`hsl(${180 + p.d * 10}, 80%, 65%)`}
-          opacity={p.o}
-          className="animate-pc-flicker"
-          style={{ animationDelay: `${i * 0.03}s` }}
-        />
-      ))}
-      {/* depth gradient rings from centre */}
-      {[20, 35, 50].map((r, i) => (
-        <circle key={i} cx="50" cy="50" r={r}
-          fill="none" stroke="rgba(45,212,191,0.08)" strokeWidth="0.3" />
-      ))}
-    </svg>
-  );
-}
-
-/* Thermal colour mapping overlay */
+/* Thermal colour mapping overlay (just the palette bar) */
 function ThermalOverlay() {
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {/* "heat blobs" */}
-      {[
-        { left: "15%", top: "25%",  w: 60,  h: 80,  color: "rgba(255,80,0,0.4)"  },
-        { left: "55%", top: "50%",  w: 90,  h: 55,  color: "rgba(255,160,0,0.3)" },
-        { left: "74%", top: "30%",  w: 50,  h: 75,  color: "rgba(255,80,0,0.35)" },
-      ].map((blob, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full blur-xl animate-bb-drift"
-          style={{
-            left: blob.left,
-            top:  blob.top,
-            width:  blob.w,
-            height: blob.h,
-            background: blob.color,
-            animationDelay: `${i * 1.5}s`,
-          }}
-        />
-      ))}
       {/* Thermal palette bar */}
       <div className="absolute bottom-3 right-3 flex flex-col items-center gap-1">
         <span className="font-mono text-[7px] text-white/60">°C</span>
@@ -106,13 +51,12 @@ function BoundingBox({ det, mode }) {
 
   return (
     <div
-      className={`absolute border ${colours} transition-all duration-300 animate-bb-drift`}
+      className={`absolute border ${colours} transition-all duration-300`}
       style={{
         left:   `${det.x}%`,
         top:    `${det.y}%`,
         width:  `${det.w}%`,
         height: `${det.h}%`,
-        animationDelay: `${det.id * 0.8}s`,
       }}
     >
       {/* Label chip */}
@@ -337,32 +281,12 @@ export default function EdgeAIWidget() {
           {/* Main viewport + sidebar */}
           <div className="flex border border-amber-500/20">
             {/* Viewport */}
-            <div className="flex-1 relative aspect-video bg-[#060812] overflow-hidden">
-              {/* Fake scene background */}
-              <div
-                className={`absolute inset-0 transition-all duration-700 ${
-                  mode === "thermal"
-                    ? "bg-gradient-to-br from-[#1a0a00] via-[#0d0800] to-[#000510]"
-                    : mode === "lidar"
-                    ? "bg-[#020510]"
-                    : "bg-gradient-to-br from-[#0d1117] via-[#0a0f14] to-[#06090e]"
-                }`}
-              />
-
-              {/* Terrain / scene texture lines (simulated) */}
-              {mode === "hd" && (
-                <div className="absolute inset-0">
-                  {/* Horizon line */}
-                  <div className="absolute top-[45%] left-0 right-0 h-[1px] bg-slate-700/30" />
-                  {/* Ground texture */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#080c06]/80 to-transparent" />
-                  {/* Sky gradient */}
-                  <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[#050810]/60 to-transparent" />
-                </div>
-              )}
-
-              {/* LiDAR point cloud */}
-              {mode === "lidar" && <PointCloud />}
+            <div 
+              className="flex-1 relative aspect-video bg-[#060812] overflow-hidden bg-cover bg-center transition-all duration-700"
+              style={{ backgroundImage: `url(/feed_${mode}.jpg)` }}
+            >
+              {/* Tint overlay for better HUD contrast */}
+              <div className="absolute inset-0 bg-[#060812]/20" />
 
               {/* Thermal overlay */}
               {mode === "thermal" && <ThermalOverlay />}
