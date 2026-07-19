@@ -22,7 +22,6 @@ const TABS = [
       { key: "Operating temp",         val: "-10°C to +55°C" },
       { key: "Arm pivot mechanism",    val: "Dual servo, 20 kg·cm, aluminium yoke" },
       { key: "Arm swing angle",        val: "0° – 90° in 1.8 s", highlight: true },
-      { key: "Prop fold clearance",    val: "≤ 11 cm when morphed" },
     ],
   },
   {
@@ -210,25 +209,6 @@ export default function SpecsSection() {
               <div className="font-mono text-[9px] text-slate-500 mt-0.5">{s.sub}</div>
             </div>
           ))}
-        </div>
-
-        {/* ── Download callout ── */}
-        <div className="mt-8 border border-amber-500/15 bg-amber-500/3 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <div className="font-mono text-[10px] tracking-widest text-amber-500/60 mb-1">
-              FULL TECHNICAL DATASHEET
-            </div>
-            <p className="text-sm text-slate-300">
-              Complete CAD drawings, Bill of Materials, test flight logs, and performance graphs
-              available under NDA for verified procurement officers and investors.
-            </p>
-          </div>
-          <a
-            href="#contact"
-            className="flex-shrink-0 px-6 py-3 border border-amber-500/60 text-amber-400 text-[11px] font-mono tracking-[0.15em] hover:bg-amber-500/10 transition-colors whitespace-nowrap"
-          >
-            REQUEST DATASHEET →
-          </a>
         </div>
       </div>
     </section>
