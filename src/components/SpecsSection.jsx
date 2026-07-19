@@ -13,7 +13,6 @@ const TABS = [
     color: "amber",
     specs: [
       { key: "Primary material",      val: "Unidirectional carbon-fibre tube & plate", highlight: true },
-      { key: "Secondary structure",    val: "CNC-machined 6061 aluminium alloy" },
       { key: "Motor-to-motor span",    val: "560 mm (diagonal, flight config)" },
       { key: "Footprint (rover)",      val: "430 × 380 mm (wheel base)" },
       { key: "All-up weight (AUW)",    val: "≤ 2.8 kg (DGCA sub-3 kg class)", highlight: true },
