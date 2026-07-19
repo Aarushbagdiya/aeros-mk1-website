@@ -153,6 +153,7 @@ function ComplianceCard({ item, isActive, onClick }) {
 
 export default function ProcurementSection() {
   const [activeCompliance, setActiveCompliance] = useState(0);
+  const [activePath, setActivePath] = useState(0);
 
   return (
     <section id="procurement" className="relative py-28 bg-[#07070f] overflow-hidden">
@@ -208,47 +209,54 @@ export default function ProcurementSection() {
             <div className="flex-1 h-px bg-amber-500/10" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {ACQUISITION_PATHS.map((path) => {
+            {ACQUISITION_PATHS.map((path, index) => {
               const colors = {
                 amber:  { border: "border-amber-500/40", text: "text-amber-400",  bg: "bg-amber-500/5"  },
                 teal:   { border: "border-teal-400/40",  text: "text-teal-300",   bg: "bg-teal-500/5"   },
                 violet: { border: "border-violet-500/40",text: "text-violet-400", bg: "bg-violet-500/5" },
               }[path.color];
 
+              const isActive = activePath === index;
+
               return (
                 <div
                   key={path.path}
-                  className={`relative border ${colors.border} ${path.best ? colors.bg : "bg-[#09090f]"} p-6`}
+                  onClick={() => setActivePath(isActive ? -1 : index)}
+                  className={`relative border cursor-pointer transition-all duration-300 ${
+                    isActive ? `${colors.border} ${path.best ? colors.bg : "bg-[#0e0e1a]"}` : "border-slate-800 bg-[#09090f] hover:border-slate-700"
+                  } p-6`}
                 >
                   {path.best && (
-                    <div className={`absolute -top-3 left-4 px-3 py-0.5 border ${colors.border} ${colors.bg} ${colors.text} text-[9px] font-mono tracking-widest`}>
+                    <div className={`absolute -top-3 left-4 px-3 py-0.5 border ${isActive ? colors.border : "border-slate-800"} ${isActive ? colors.bg : "bg-[#09090f]"} ${isActive ? colors.text : "text-slate-500"} text-[9px] font-mono tracking-widest transition-colors duration-300`}>
                       ★ RECOMMENDED
                     </div>
                   )}
-                  <div className={`font-mono text-[9px] tracking-widest mb-1 ${colors.text}`}>
+                  <div className={`font-mono text-[9px] tracking-widest mb-1 ${isActive ? colors.text : "text-slate-600"}`}>
                     {path.phase}
                   </div>
-                  <h4 className="text-base font-black text-white mb-4">{path.path}</h4>
+                  <h4 className={`text-base font-black mb-4 ${isActive ? "text-white" : "text-slate-400"}`}>{path.path}</h4>
                   <div className="grid grid-cols-2 gap-3 mb-5">
                     <div>
                       <div className="font-mono text-[8px] text-slate-600 mb-0.5">TIMELINE</div>
-                      <div className={`text-sm font-bold ${colors.text}`}>{path.timeline}</div>
+                      <div className={`text-sm font-bold ${isActive ? colors.text : "text-slate-500"}`}>{path.timeline}</div>
                     </div>
                     <div>
                       <div className="font-mono text-[8px] text-slate-600 mb-0.5">FUNDING</div>
-                      <div className={`text-sm font-bold ${colors.text}`}>{path.value}</div>
+                      <div className={`text-sm font-bold ${isActive ? colors.text : "text-slate-500"}`}>{path.value}</div>
                     </div>
                   </div>
-                  <div className="space-y-1.5">
-                    {path.steps.map((step, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <span className={`font-mono text-[9px] mt-0.5 flex-shrink-0 ${colors.text}`}>
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="text-[11px] text-slate-400">{step}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {isActive && (
+                    <div className="space-y-1.5 border-t border-slate-800 pt-4 mt-2">
+                      {path.steps.map((step, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <span className={`font-mono text-[9px] mt-0.5 flex-shrink-0 ${colors.text}`}>
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="text-[11px] text-slate-400">{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}
