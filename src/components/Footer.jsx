@@ -1,7 +1,11 @@
+import React, { useState } from "react";
+import LegalModal from "./LegalModal.jsx";
+
 /* ─────────────────────────────────────────────────────────────
    Footer — Tactical minimal footer with grid overlay
    ───────────────────────────────────────────────────────────── */
 export default function Footer() {
+  const [activeLegalDoc, setActiveLegalDoc] = useState(null);
   const year = new Date().getFullYear();
 
   return (
@@ -80,7 +84,11 @@ export default function Footer() {
                 "Export Control Notice",
                 "Responsible Disclosure",
               ].map((item) => (
-                <div key={item} className="text-[11px] font-mono text-slate-600 cursor-pointer hover:text-slate-400 transition-colors">
+                <div 
+                  key={item} 
+                  onClick={() => setActiveLegalDoc(item)}
+                  className="text-[11px] font-mono text-slate-600 cursor-pointer hover:text-slate-400 transition-colors"
+                >
                   {item}
                 </div>
               ))}
@@ -106,6 +114,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      
+      <LegalModal 
+        isOpen={!!activeLegalDoc} 
+        docType={activeLegalDoc} 
+        onClose={() => setActiveLegalDoc(null)} 
+      />
     </footer>
   );
 }
