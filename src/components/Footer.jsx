@@ -87,7 +87,7 @@ export default function Footer() {
             </div>
             <div className="mt-6 border border-slate-800 p-3">
               <div className="font-mono text-[8px] text-slate-700 tracking-widest mb-1">OPERATIONAL HQ</div>
-              <div className="text-[10px] text-slate-500">Pune, Maharashtra, India</div>
+              <div className="text-[10px] text-slate-500">Pilani, Rajasthan, India</div>
               <div className="text-[10px] text-slate-600 font-mono mt-0.5">trishul.dynamics@gmail.com</div>
             </div>
           </div>

@@ -81,10 +81,10 @@ const SUPPLY_CHAIN = [
   { component: "NVIDIA Jetson Nano",             origin: "Import (strategic exception)",    share: "0%"   },
   { component: "FLIR Thermal Module",            origin: "Import → PIL listed",             share: "0%"   },
   { component: "6061 Aluminium Hardware",        origin: "100% Domestic",                   share: "100%" },
-  { component: "PCB / Wiring Harness",           origin: "Domestic (Pune contract mfg.)",   share: "100%" },
+  { component: "PCB / Wiring Harness",           origin: "Domestic (Pilani contract mfg.)",   share: "100%" },
   { component: "LiPo Battery Pack",              origin: "Domestic assembly (cells imp.)",  share: "60%"  },
   { component: "Servo Actuators",                origin: "Domestic (Hyderabad)",            share: "100%" },
-  { component: "Final Assembly / Testing",       origin: "India (Trishul Dynamics, Pune)",  share: "100%" },
+  { component: "Final Assembly / Testing",       origin: "India (Trishul Dynamics, Pilani)",  share: "100%" },
 ];
 
 const ACQUISITION_PATHS = [

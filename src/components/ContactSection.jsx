@@ -435,7 +435,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 {[
                   { label: "Email",    val: "trishul.dynamics@gmail.com", icon: "◉" },
-                  { label: "Location", val: "Pune, Maharashtra, India",   icon: "◈" },
+                  { label: "Location", val: "Pilani, Rajasthan, India",   icon: "◈" },
                   { label: "Response", val: "Within 48 business hours",   icon: "◎" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">

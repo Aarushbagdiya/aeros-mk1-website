@@ -159,7 +159,7 @@ export default function TeamSection() {
           <div className="h-px sm:h-8 sm:w-px w-full bg-slate-800" />
           <div className="font-mono text-center sm:text-left">
             <div className="text-[9px] tracking-widest text-slate-600 mb-0.5">HEADQUARTERS</div>
-            <div className="text-sm text-slate-300">Pune, Maharashtra, India</div>
+            <div className="text-sm text-slate-300">Pilani, Rajasthan, India</div>
           </div>
           <div className="h-px sm:h-8 sm:w-px w-full bg-slate-800" />
           <a
