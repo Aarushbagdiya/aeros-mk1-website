@@ -8,11 +8,11 @@ import { useState, useEffect, useRef } from "react";
 /* ── Static detections specific to the generated backgrounds ── */
 const MODE_DETECTIONS = {
   hd: [
-    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 42.5, y: 71, w: 7.5, h: 7 },
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 49, y: 63, w: 5.5, h: 5.5 },
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 34.5, y: 81, w: 2.2, h: 4.5 },
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 37.5, y: 79, w: 2.2, h: 4.5 },
-    { id: 8, label: "PERSONNEL", conf: 0.82, cls: "friendly",x: 39.5, y: 78, w: 2.2, h: 4.5 },
+    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 45, y: 77.5, w: 6.5, h: 6.5 },
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 55, y: 69.5, w: 5.5, h: 5.5 },
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 32, y: 87, w: 2, h: 4 },
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 36, y: 86, w: 2, h: 4 },
+    { id: 8, label: "PERSONNEL", conf: 0.82, cls: "friendly",x: 39.5, y: 85, w: 2, h: 4 },
   ],
   thermal: [
     { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 28, y: 25, w: 42, h: 45 },
