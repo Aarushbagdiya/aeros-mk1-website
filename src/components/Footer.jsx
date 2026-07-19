@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LegalModal from "./LegalModal.jsx";
 
 /* ─────────────────────────────────────────────────────────────
-   Footer — Tactical minimal footer with grid overlay
+   Footer - Tactical minimal footer with grid overlay
    ───────────────────────────────────────────────────────────── */
 export default function Footer() {
   const [activeLegalDoc, setActiveLegalDoc] = useState(null);

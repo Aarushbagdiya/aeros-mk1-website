@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   MissionProfiles — Desert / Mountain / Perimeter / Maritime
+   MissionProfiles - Desert / Mountain / Perimeter / Maritime
    ───────────────────────────────────────────────────────────── */
 
 const MISSIONS = [
@@ -76,7 +76,7 @@ const MISSIONS = [
     challenge:
       "24/7 perimeter security is manpower-intensive, vulnerable to fatigue, and creates predictable patrol patterns that adversaries can exploit.",
     solution:
-      "AEROS MK-1 runs autonomous perimeter loops from a charging pad — flying when needed, quietly rolling when stealth matters. AI alerts the ops room instantly upon classification of any intrusion.",
+      "AEROS MK-1 runs autonomous perimeter loops from a charging pad - flying when needed, quietly rolling when stealth matters. AI alerts the ops room instantly upon classification of any intrusion.",
     modes:    ["Autonomous Patrol", "Stealth Rover", "Alert Mode", "Persistent Watch"],
     metrics: [
       { label: "Patrol perimeter",   val: "Up to 4 km" },
@@ -174,7 +174,7 @@ export default function MissionProfiles() {
             </span>
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-            From the scorching Thar desert to the frozen heights of the Siachen glacier —
+            From the scorching Thar desert to the frozen heights of the Siachen glacier -
             the AEROS MK-1 is engineered for every theatre the Indian Armed Forces face.
           </p>
         </div>

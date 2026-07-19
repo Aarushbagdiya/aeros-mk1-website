@@ -11,7 +11,7 @@ import ContactSection     from "./components/ContactSection.jsx";
 import Footer             from "./components/Footer.jsx";
 
 /* ─────────────────────────────────────────────────────────────
-   App — Root composition
+   App - Root composition
    ───────────────────────────────────────────────────────────── */
 
 /* Amber tactical divider between sections */
@@ -30,7 +30,7 @@ function Divider({ label }) {
   );
 }
 
-/* Boot splash — animated for 1.8 s then calls onDone */
+/* Boot splash - animated for 1.8 s then calls onDone */
 function BootLoader({ onDone }) {
   useEffect(() => {
     const t = setTimeout(onDone, 1800);

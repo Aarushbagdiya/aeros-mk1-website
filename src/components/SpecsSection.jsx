@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   SpecsSection — Tabbed technical specifications
+   SpecsSection - Tabbed technical specifications
    Tabs: Airframe · Propulsion · Comms · Sensors · AI & Software
    ───────────────────────────────────────────────────────────── */
 
@@ -17,10 +17,10 @@ const TABS = [
       { key: "Footprint (rover)",      val: "430 × 380 mm (wheel base)" },
       { key: "All-up weight (AUW)",    val: "≤ 2.8 kg (DGCA sub-3 kg class)", highlight: true },
       { key: "Payload capacity",       val: "Up to 600 g" },
-      { key: "IP rating",              val: "IP54 — dust & splash resistant" },
+      { key: "IP rating",              val: "IP54 - dust & splash resistant" },
       { key: "Operating temp",         val: "-10°C to +55°C" },
       { key: "Arm pivot mechanism",    val: "Dual servo, 20 kg·cm, aluminium yoke" },
-      { key: "Arm swing angle",        val: "0° – 90° in 1.8 s", highlight: true },
+      { key: "Arm swing angle",        val: "0° - 90° in 1.8 s", highlight: true },
     ],
   },
   {
@@ -49,7 +49,7 @@ const TABS = [
     color: "violet",
     specs: [
       { key: "RC / Telemetry link",    val: "ExpressLRS (ELRS) 2.4 GHz", highlight: true },
-      { key: "Control range",          val: "15–22 km LOS (high-gain patch)", highlight: true },
+      { key: "Control range",          val: "15-22 km LOS (high-gain patch)", highlight: true },
       { key: "Telemetry protocol",     val: "MAVLink 2.0 over CRSF/UART" },
       { key: "Video downlink",         val: "H.265 / 1080p @ 30 fps" },
       { key: "Video range",            val: "Up to 10 km (LOS, 5.8 GHz)" },
@@ -67,15 +67,15 @@ const TABS = [
     icon:  "◉",
     color: "emerald",
     specs: [
-      { key: "Thermal camera",         val: "FLIR Lepton 3.5 — 160×120 LWIR", highlight: true },
+      { key: "Thermal camera",         val: "FLIR Lepton 3.5 - 160×120 LWIR", highlight: true },
       { key: "Thermal NETD",           val: "< 50 mK" },
-      { key: "HD camera",              val: "Sony IMX477 — 12.3 MP, 1/2.3\"" },
+      { key: "HD camera",              val: "Sony IMX477 - 12.3 MP, 1/2.3\"" },
       { key: "HD FOV",                 val: "83° (wide) / 35° (tele, 2× optical)" },
-      { key: "LiDAR unit",             val: "TFMini-S (ToF) — 12 m range", highlight: true },
+      { key: "LiDAR unit",             val: "TFMini-S (ToF) - 12 m range", highlight: true },
       { key: "LiDAR refresh rate",     val: "100 Hz" },
       { key: "Flight controller",      val: "CUAV V6X (dual IMU)",           highlight: true },
       { key: "IMU",                    val: "ICM-42688-P + ICM-20649 (redundant)" },
-      { key: "Barometer",             val: "MS5611 — ±10 cm resolution" },
+      { key: "Barometer",             val: "MS5611 - ±10 cm resolution" },
       { key: "Magnetometer",           val: "RM3100" },
       { key: "GNSS",                   val: "u-blox M10 (GPS + GLONASS + Galileo)" },
     ],

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   NavBar — Tactical sticky navigation
+   NavBar - Tactical sticky navigation
    ───────────────────────────────────────────────────────────── */
 export default function NavBar() {
   const [scrolled, setScrolled]     = useState(false);

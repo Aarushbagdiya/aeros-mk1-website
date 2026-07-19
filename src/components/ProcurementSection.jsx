@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   ProcurementSection — Compliance matrix, acquisition pathways,
+   ProcurementSection - Compliance matrix, acquisition pathways,
    and supply-chain transparency for MoD procurement officers
    ───────────────────────────────────────────────────────────── */
 
 const COMPLIANCE_ITEMS = [
   {
     scheme:  "Positive Indigenisation List (PIL)",
-    ref:     "MoD PIL Category — UAV Systems",
+    ref:     "MoD PIL Category - UAV Systems",
     status:  "ELIGIBLE",
     detail:  "AEROS MK-1 falls under the positive indigenisation list for UAVs ≤25 kg. Fully domestically manufactured. Importation of this category is restricted, creating a mandated government procurement avenue for Indian OEMs.",
     icon:    "◈",
@@ -26,7 +26,7 @@ const COMPLIANCE_ITEMS = [
     scheme:  "Make-II (Industry-Funded)",
     ref:     "DPP 2020 · Chapter III · Para 4.3",
     status:  "APPLICABLE",
-    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage — suitable for an already-prototyped system like AEROS MK-1 seeking production order.",
+    detail:  "Under Make-II, Trishul Dynamics can approach Army HQ / Air HQ with a proposal. No Government funding at prototype stage - suitable for an already-prototyped system like AEROS MK-1 seeking production order.",
     icon:    "▲",
     color:   "teal",
   },
@@ -90,8 +90,8 @@ const SUPPLY_CHAIN = [
 const ACQUISITION_PATHS = [
   {
     path:     "iDEX DISC",
-    phase:    "2026–27 · Validation",
-    timeline: "9–18 months",
+    phase:    "2026-27 · Validation",
+    timeline: "9-18 months",
     value:    "Up to ₹1.5 Cr",
     steps:    ["Submit DISC application to DIO", "Evaluation by iDEX evaluators & DRDO labs", "Grant-funded prototype demo", "BSF / Army observer trial"],
     color:    "amber",
@@ -99,17 +99,17 @@ const ACQUISITION_PATHS = [
   },
   {
     path:     "ADITI / iDEX Prime",
-    phase:    "2027–28 · Pilot",
-    timeline: "18–30 months",
+    phase:    "2027-28 · Pilot",
+    timeline: "18-30 months",
     value:    "Up to ₹25 Cr",
-    steps:    ["ADITI round application", "Desert field trials", "First paid border pilot (5–10 units)", "Series A ready"],
+    steps:    ["ADITI round application", "Desert field trials", "First paid border pilot (5-10 units)", "Series A ready"],
     color:    "teal",
     best:     false,
   },
   {
     path:     "DRDO TDF / Make-II",
-    phase:    "2028–30 · Scale",
-    timeline: "24–36 months",
+    phase:    "2028-30 · Scale",
+    timeline: "24-36 months",
     value:    "Up to ₹50 Cr",
     steps:    ["DRDO Technology Development Fund grant", "MoD tender (PIL mandated domestic)", "Indian Army / paramilitary: 100+ units", "Mk-2 architecture & export roadmap"],
     color:    "violet",
@@ -177,7 +177,7 @@ export default function ProcurementSection() {
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
             Every acquisition pathway mapped. Every compliance criterion pre-verified.
             Trishul Dynamics has engineered AEROS MK-1 from day one to meet MoD's procurement
-            requirements — not as an afterthought.
+            requirements - not as an afterthought.
           </p>
         </div>
 
@@ -328,8 +328,8 @@ export default function ProcurementSection() {
           {[
             {
               label:   "UNIT PRICE (INDICATIVE)",
-              value:   "₹ 15–30 Lakhs",
-              sub:     "Pilot-batch pricing (5–10 units). Scale orders (100+): ₹25–50 L/unit.",
+              value:   "₹ 15-30 Lakhs",
+              sub:     "Pilot-batch pricing (5-10 units). Scale orders (100+): ₹25-50 L/unit.",
               color:   "amber",
             },
             {
@@ -340,7 +340,7 @@ export default function ProcurementSection() {
             },
             {
               label:   "LEAD TIME (PRODUCTION)",
-              value:   "90–120 Days",
+              value:   "90-120 Days",
               sub:     "Post-LOI. First 3 units available from existing stock.",
               color:   "emerald",
             },

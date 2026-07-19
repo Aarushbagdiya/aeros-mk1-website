@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   TeamSection — Founders · Trishul Dynamics
+   TeamSection - Founders · Trishul Dynamics
    ───────────────────────────────────────────────────────────── */
 
 const FOUNDERS = [
@@ -10,7 +10,7 @@ const FOUNDERS = [
     edu:     "BITS Pilani & Iowa State University",
     leads:   "Avionics, systems integration & sensor architecture",
     detail:
-      "Leads all electrical subsystems and the autonomy stack — from flight-controller firmware to on-board edge AI. Designed the ExpressLRS RF link, sensor fusion pipeline, and autonomous mission logic running on the NVIDIA Jetson Nano.",
+      "Leads all electrical subsystems and the autonomy stack - from flight-controller firmware to on-board edge AI. Designed the ExpressLRS RF link, sensor fusion pipeline, and autonomous mission logic running on the NVIDIA Jetson Nano.",
     tags:    ["CUAV V6X FC", "ELRS RF Link", "Edge AI", "ArduPilot / PX4", "YOLOv8"],
     color:   "amber",
     initials:"DS",
@@ -34,7 +34,7 @@ const FOUNDERS = [
     edu:     "B.E. Computer Science · BITS Pilani",
     leads:   "Operations, go-to-market strategy & business development",
     detail:
-      "Drives the operational backbone of Trishul Dynamics — from procurement strategy and iDEX grant management to customer engagement with the Indian Armed Forces and paramilitary. Bridges the engineering team and the defence acquisition ecosystem.",
+      "Drives the operational backbone of Trishul Dynamics - from procurement strategy and iDEX grant management to customer engagement with the Indian Armed Forces and paramilitary. Bridges the engineering team and the defence acquisition ecosystem.",
     tags:    ["iDEX / DISC", "Defence Procurement", "Go-to-Market", "CS / Systems", "Operations"],
     color:   "violet",
     initials:"AB",
@@ -87,7 +87,7 @@ export default function TeamSection() {
           </h2>
           <p className="text-slate-400 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
             Two engineers from BITS Pilani building the machine that border surveillance
-            has been waiting for — one handles the sky, one handles the ground.
+            has been waiting for - one handles the sky, one handles the ground.
           </p>
         </div>
 

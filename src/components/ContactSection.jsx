@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   ContactSection — Secure defence brief request form
+   ContactSection - Secure defence brief request form
    Submissions → Web3Forms  (replace WEB3FORMS_KEY with your key
    from https://web3forms.com)
    ───────────────────────────────────────────────────────────── */
@@ -162,7 +162,7 @@ export default function ContactSection() {
     try {
       const payload = {
         access_key:   WEB3FORMS_KEY,
-        subject:      `[TRISHUL DYNAMICS] Brief Request — ${form.classification}`,
+        subject:      `[TRISHUL DYNAMICS] Brief Request - ${form.classification}`,
         from_name:    "Trishul Dynamics Website",
         name:         form.name,
         email:        form.email,
@@ -171,7 +171,7 @@ export default function ContactSection() {
         phone:        form.phone || "Not provided",
         brief_type:   form.classification,
         message:      form.message || "No additional context provided.",
-        nda_consent:  form.consent ? "Yes — verified professional" : "No",
+        nda_consent:  form.consent ? "Yes - verified professional" : "No",
         botcheck:     "",           // honeypot
       };
 
@@ -392,7 +392,7 @@ export default function ContactSection() {
                     TRANSMISSION FAILED
                   </div>
                   <p className="text-xs text-slate-400">
-                    Network error — please check your connection and try again, or email us
+                    Network error - please check your connection and try again, or email us
                     directly at{" "}
                     <a href="mailto:trishul.dynamics@gmail.com" className="text-amber-400 hover:underline">
                       trishul.dynamics@gmail.com

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   EdgeAIWidget — Simulated live ISR sensor feed
+   EdgeAIWidget - Simulated live ISR sensor feed
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
@@ -287,7 +287,7 @@ export default function EdgeAIWidget() {
             </span>
           </h2>
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-            The AEROS MK-1 runs YOLOv8 object detection on an NVIDIA Jetson Nano — classifying
+            The AEROS MK-1 runs YOLOv8 object detection on an NVIDIA Jetson Nano - classifying
             threats, vehicles, and persons at 30 fps with sub-15 ms latency, entirely on-board.
             No network. No cloud. No vulnerability.
           </p>

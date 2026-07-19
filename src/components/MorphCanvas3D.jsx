@@ -2,7 +2,7 @@ import { useRef, useEffect, useMemo } from "react";
 import * as THREE from "three";
 
 /* ═══════════════════════════════════════════════════════════════
-   MorphCanvas3D — Three.js WebGL morph animation
+   MorphCanvas3D - Three.js WebGL morph animation
    ═══════════════════════════════════════════════════════════════
    Renders the AEROS MK-1 drone-to-rover transformation
    in full 3D with:
@@ -314,7 +314,7 @@ export default function MorphCanvas3D({ progress = 0 }) {
     const wheels = [];
 
     armAngles.forEach((cfg, i) => {
-      // Pivot group — positioned at body corner
+      // Pivot group - positioned at body corner
       const pivotGroup = new THREE.Group();
       pivotGroup.position.set(cfg.x, 0, cfg.z);
       pivotGroup.rotation.y = cfg.rotY;

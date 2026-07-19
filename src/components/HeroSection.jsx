@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ─────────────────────────────────────────────────────────────
-   HeroSection — Full-screen command-centre hero
+   HeroSection - Full-screen command-centre hero
    ───────────────────────────────────────────────────────────── */
 
 
@@ -174,7 +174,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-24 pb-20">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-          {/* LEFT — copy */}
+          {/* LEFT - copy */}
           <div className="flex-1 text-left max-w-2xl">
 
             {/* Mission status badge */}
@@ -212,7 +212,7 @@ export default function HeroSection() {
               >
                 The <strong className="text-white">AEROS MK-1</strong> is India's first morphing
                 hybrid UAV-UGV. It flies, lands, folds its props, swings its servo tilt-arms 90°,
-                and becomes a silent 4-wheel ground rover — then launches again, on command,
+                and becomes a silent 4-wheel ground rover - then launches again, on command,
                 from any terrain.
               </p>
             )}
@@ -259,7 +259,7 @@ export default function HeroSection() {
 
           </div>
 
-          {/* RIGHT — drone visualisation */}
+          {/* RIGHT - drone visualisation */}
           <div className="relative flex-shrink-0 flex items-center justify-center">
             <DroneSilhouette />
 

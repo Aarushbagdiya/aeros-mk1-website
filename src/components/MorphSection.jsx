@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import MorphCanvas3D from "./MorphCanvas3D.jsx";
 
 /* ═══════════════════════════════════════════════════════════════
-   MorphSection — Physically-accurate 90° arm-swing animation
+   MorphSection - Physically-accurate 90° arm-swing animation
    ═══════════════════════════════════════════════════════════════
    Mechanical model
    ─────────────────
@@ -32,7 +32,7 @@ const PROP_SPAN= 36;    // half-span of one prop blade
 const GROUND_Y = 360;   // ground datum Y in viewBox
 
 /* ─────────────────────────────────────────────────────────────
-   geometry(p) — compute every derived position from progress p
+   geometry(p) - compute every derived position from progress p
    ─────────────────────────────────────────────────────────────
    Key insight:
    Left arm pivot is at (CX - BODY_W/2, bodyCY).
@@ -59,7 +59,7 @@ function geometry(p) {
   const lPivot = { x: lPx, y: bodyCY };
   const rPivot = { x: rPx, y: bodyCY };
 
-  /* Arm tips (trigonometric — no SVG transform required) */
+  /* Arm tips (trigonometric - no SVG transform required) */
   const lTip = { x: lPx - ARM_LEN * Math.cos(rad), y: bodyCY + ARM_LEN * Math.sin(rad) };
   const rTip = { x: rPx + ARM_LEN * Math.cos(rad), y: bodyCY + ARM_LEN * Math.sin(rad) };
 
@@ -105,10 +105,10 @@ function ArmAssembly({ pivot, tip, propDir, isFront, propOp, wheelOp, active }) 
 
   return (
     <g opacity={baseOp}>
-      {/* Arm tube — inner glow stripe */}
+      {/* Arm tube - inner glow stripe */}
       <line x1={pivot.x} y1={pivot.y} x2={tip.x} y2={tip.y}
         stroke={isFront ? "rgba(245,158,11,0.18)" : "none"} strokeWidth={armW + 4} strokeLinecap="round" />
-      {/* Arm tube — main */}
+      {/* Arm tube - main */}
       <line x1={pivot.x} y1={pivot.y} x2={tip.x} y2={tip.y}
         stroke={armColor} strokeWidth={armW} strokeLinecap="round" />
 
@@ -316,7 +316,7 @@ function Annotations({ geo, p }) {
       {p > 0.06 && p < 0.94 && (
         <text x={CX} y={VB_H - 10} textAnchor="middle"
           fill="rgba(245,158,11,0.5)">
-          ▶ SERVO — {Math.round(θ * 0.22 + 1)} kg·cm · TORQUE ACTIVE
+          ▶ SERVO - {Math.round(θ * 0.22 + 1)} kg·cm · TORQUE ACTIVE
         </text>
       )}
     </g>
@@ -378,7 +378,7 @@ function MorphCanvas({ p }) {
   const wheelOp = Math.min(1, Math.max(0, (p - 0.32) * 2.8));
   const active  = p > 0.04 && p < 0.96;
 
-  /* Rear arm positions (slight depth offset — same angle) */
+  /* Rear arm positions (slight depth offset - same angle) */
   const rearOfsX = 14, rearOfsY = 8;
 
   return (
@@ -451,9 +451,9 @@ function MorphCanvas({ p }) {
       {/* Mode + angle readout (top-right) */}
       <text x={VB_W - 10} y={22} textAnchor="end"
         fill="rgba(245,158,11,0.52)" fontSize="8" fontFamily="monospace">
-        {p < 0.08 ? "// FLIGHT MODE — ARMS HORIZONTAL"
-          : p < 0.92 ? "// TRANSITION — SERVOS ACTIVE"
-          : "// ROVER MODE — ARMS LOCKED 90°"}
+        {p < 0.08 ? "// FLIGHT MODE - ARMS HORIZONTAL"
+          : p < 0.92 ? "// TRANSITION - SERVOS ACTIVE"
+          : "// ROVER MODE - ARMS LOCKED 90°"}
       </text>
       <text x={VB_W - 10} y={35} textAnchor="end"
         fill="rgba(45,212,191,0.62)" fontSize="9" fontFamily="monospace">
@@ -481,7 +481,7 @@ const STEPS = [
     title: "90° Servo Arm Swing",
     accent: "text-teal-300", border: "border-teal-400/40", bg: "bg-teal-500/5",
     grad: "from-teal-400/60",
-    body: "MAVLink CMD triggers four shoulder servos simultaneously. Each arm pivots on its lateral axis — tip sweeping from horizontal to vertically downward in 1.8 s. Props auto-fold to ≤11 cm. Body rises as arm-legs extend.",
+    body: "MAVLink CMD triggers four shoulder servos simultaneously. Each arm pivots on its lateral axis - tip sweeping from horizontal to vertically downward in 1.8 s. Props auto-fold to ≤11 cm. Body rises as arm-legs extend.",
   },
   {
     id: 2, range: [0.7, 1],
@@ -489,7 +489,7 @@ const STEPS = [
     title: "Silent Ground Rover",
     accent: "text-emerald-400", border: "border-emerald-500/40", bg: "bg-emerald-500/5",
     grad: "from-emerald-400/60",
-    body: "Arms detent-locked at 90°. Motor hubs touch ground — wheels engage. Body elevated ~95 mm on arm-legs. 6+ hour silent ISR stakeout on brushed drive motors. Zero acoustic signature. Relaunch on any command.",
+    body: "Arms detent-locked at 90°. Motor hubs touch ground - wheels engage. Body elevated ~95 mm on arm-legs. 6+ hour silent ISR stakeout on brushed drive motors. Zero acoustic signature. Relaunch on any command.",
   },
 ];
 
@@ -572,9 +572,9 @@ export default function MorphSection() {
                 {/* Mode + angle readout overlay */}
                 <div className="absolute top-3 right-4 z-10 text-right font-mono">
                   <div className="text-[9px] tracking-widest text-amber-500/50">
-                    {p < 0.08 ? "// FLIGHT MODE — ARMS HORIZONTAL"
-                      : p < 0.92 ? "// TRANSITION — SERVOS ACTIVE"
-                      : "// ROVER MODE — ARMS LOCKED 90°"}
+                    {p < 0.08 ? "// FLIGHT MODE - ARMS HORIZONTAL"
+                      : p < 0.92 ? "// TRANSITION - SERVOS ACTIVE"
+                      : "// ROVER MODE - ARMS LOCKED 90°"}
                   </div>
                   <div className="text-[11px] text-teal-300/70 mt-0.5">
                     ARM: {String(Math.round(p * 90)).padStart(2,"0")}° / 90°
