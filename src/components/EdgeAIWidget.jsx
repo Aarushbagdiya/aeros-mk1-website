@@ -8,16 +8,16 @@ import { useState, useEffect, useRef } from "react";
 /* ── Static detections specific to the generated backgrounds ── */
 const MODE_DETECTIONS = {
   hd: [
-    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 45, y: 81, w: 9, h: 8 },
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 57, y: 72, w: 8, h: 8 },
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 33, y: 88, w: 2.5, h: 5 },
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 38, y: 87, w: 2.5, h: 5 },
-    { id: 8, label: "PERSONNEL", conf: 0.82, cls: "friendly",x: 41, y: 87, w: 2.5, h: 5 },
+    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 42.5, y: 71, w: 7.5, h: 7 },
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 49, y: 63, w: 5.5, h: 5.5 },
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 34.5, y: 81, w: 2.2, h: 4.5 },
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 37.5, y: 79, w: 2.2, h: 4.5 },
+    { id: 8, label: "PERSONNEL", conf: 0.82, cls: "friendly",x: 39.5, y: 78, w: 2.2, h: 4.5 },
   ],
   thermal: [
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 38, y: 40, w: 35, h: 36 },
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 73, y: 40, w: 7,  h: 32 },
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 81, y: 48, w: 9, h: 37 },
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 28, y: 25, w: 42, h: 45 },
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 70, y: 20, w: 8,  h: 36 },
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 79, y: 28, w: 9, h: 42 },
   ],
   lidar: []
 };
