@@ -5,19 +5,25 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Static detections specific to the generated backgrounds ── */
+/* ── Static detections - coordinates measured from source images (1376×768) ── */
 const MODE_DETECTIONS = {
   hd: [
-    { id: 1, label: "VEHICLE",   conf: 0.94, cls: "unknown", x: 45, y: 77.5, w: 6.5, h: 6.5 },
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 55, y: 69.5, w: 5.5, h: 5.5 },
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 32, y: 87, w: 2, h: 4 },
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 36, y: 86, w: 2, h: 4 },
-    { id: 8, label: "PERSONNEL", conf: 0.82, cls: "friendly",x: 39.5, y: 85, w: 2, h: 4 },
+    // Left Humvee (closer, lower-left on the road curve)
+    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 35.5, y: 69,   w: 8.7,  h: 11.7 },
+    // Right Humvee (farther up the road, slightly above-right)
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 44,   y: 63.8, w: 6.5,  h: 10.4 },
+    // Personnel figure walking left of the vehicles
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 30.5, y: 74.9, w: 1.5,  h: 5.9 },
+    // Personnel figure walking next to first
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 33,   y: 74.2, w: 1.5,  h: 5.9 },
   ],
   thermal: [
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 28, y: 25, w: 42, h: 45 },
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 70, y: 20, w: 8,  h: 36 },
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 79, y: 28, w: 9, h: 42 },
+    // Bright glowing Humvee in the center of frame
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 35.5, y: 25.4, w: 20.3, h: 50.8 },
+    // Taller personnel figure walking right of vehicle
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 56.7, y: 27.3, w: 5.8,  h: 49.5 },
+    // Shorter/rightmost personnel figure
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 63.2, y: 33.9, w: 6.5,  h: 44.3 },
   ],
   lidar: []
 };
