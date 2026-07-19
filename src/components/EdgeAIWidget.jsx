@@ -5,25 +5,25 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Detections calibrated via PIL overlay on source images (1376×768) ── */
+/* ── Detections verified via percentage grid overlay on source images (1376×768) ── */
 const MODE_DETECTIONS = {
   hd: [
-    // Left Humvee on road curve (verified v4)
-    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 44.5, y: 80,   w: 6,   h: 7.5 },
-    // Right Humvee farther up road (verified v4)
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 52.5, y: 74,   w: 5,   h: 6.5 },
-    // Person walking left of vehicles (verified v4)
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 37,   y: 84,   w: 1.2, h: 4.5 },
-    // Second person (verified v4)
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 39.5, y: 83,   w: 1.2, h: 4.5 },
+    // Left Humvee on road curve: left edge at 43%, top at 78%
+    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 43, y: 78, w: 7, h: 9 },
+    // Right Humvee farther up: left edge at 50%, top at 73%
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 50, y: 73, w: 6, h: 7 },
+    // Person 1 walking on road
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 34, y: 82, w: 1.5, h: 5 },
+    // Person 2
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 37, y: 81, w: 1.5, h: 5 },
   ],
   thermal: [
-    // Bright glowing Humvee body (verified v6)
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 40,   y: 26,   w: 18,  h: 52 },
-    // Taller walking personnel right of vehicle (verified v6)
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 63,   y: 22,   w: 6.5, h: 56 },
-    // Shorter rightmost personnel (verified v6)
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 74,   y: 27,   w: 8,   h: 50 },
+    // Humvee body: left edge at 42%, top at 35%
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 42, y: 35, w: 16, h: 47 },
+    // Taller person: left edge at 63%, top at 33%
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 63, y: 33, w: 7,  h: 49 },
+    // Shorter person: left edge at 73%, top at 36%
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 73, y: 36, w: 7,  h: 46 },
   ],
   lidar: []
 };
