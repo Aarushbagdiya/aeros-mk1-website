@@ -18,12 +18,12 @@ const MODE_DETECTIONS = {
     { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 37, y: 81, w: 1.5, h: 5 },
   ],
   thermal: [
-    // Humvee body: left edge at 42%, top at 35%
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 42, y: 35, w: 16, h: 47 },
-    // Taller person: left edge at 63%, top at 33%
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 63, y: 33, w: 7,  h: 49 },
-    // Shorter person: left edge at 73%, top at 36%
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 73, y: 36, w: 7,  h: 46 },
+    // Humvee body
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 49, y: 35, w: 16, h: 47 },
+    // Taller person
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 70, y: 33, w: 7,  h: 49 },
+    // Shorter person
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 80, y: 36, w: 7,  h: 46 },
   ],
   lidar: []
 };
