@@ -86,8 +86,8 @@ export default function TeamSection() {
             </span>
           </h2>
           <p className="text-slate-400 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
-            Two engineers from BITS Pilani building the machine that border surveillance
-            has been waiting for - one handles the sky, one handles the ground.
+            Three engineers from BITS Pilani building the machine that border surveillance
+            has been waiting for - one handles the sky, one handles the ground, and one handles the intelligence.
           </p>
         </div>
 
