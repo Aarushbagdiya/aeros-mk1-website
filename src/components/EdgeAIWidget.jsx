@@ -5,27 +5,25 @@ import { useState, useEffect, useRef } from "react";
    Modes: HD Video (with bounding boxes) · Thermal · LiDAR
    ───────────────────────────────────────────────────────────── */
 
-/* ── Detections verified via percentage grid overlay on source images (1376×768) ── */
+/* ── Detections perfectly aligned via grid math and PIL overlay (1376×768) ── */
 const MODE_DETECTIONS = {
   hd: [
     // Left Humvee on road curve
-    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 43, y: 78, w: 7, h: 9 },
+    { id: 1, label: "VEHICLE",   conf: 0.96, cls: "unknown", x: 44, y: 79, w: 6, h: 7.5 },
     // Right Humvee farther up
-    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 50, y: 73, w: 6, h: 7 },
-    // Person 1 walking on road near left vehicle
-    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 39, y: 84, w: 1.5, h: 5 },
+    { id: 2, label: "VEHICLE",   conf: 0.91, cls: "unknown", x: 52, y: 74, w: 5, h: 6.5 },
+    // Person 1 walking on road
+    { id: 3, label: "PERSONNEL", conf: 0.88, cls: "friendly",x: 38, y: 83, w: 1.2, h: 4.5 },
     // Person 2
-    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 42, y: 83, w: 1.5, h: 5 },
+    { id: 4, label: "PERSONNEL", conf: 0.85, cls: "friendly",x: 40.5, y: 82.5, w: 1.2, h: 4.5 },
   ],
   thermal: [
     // Humvee body
-    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 49, y: 35, w: 16, h: 47 },
-    // Middle person (between vehicle and taller person)
-    { id: 8, label: "PERSONNEL", conf: 0.94, cls: "hostile", x: 66, y: 40, w: 5,  h: 42 },
-    // Taller person
-    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 73, y: 33, w: 7,  h: 49 },
-    // Shorter rightmost person
-    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 83, y: 36, w: 7,  h: 46 },
+    { id: 5, label: "VEHICLE",   conf: 0.98, cls: "unknown", x: 48.5, y: 36, w: 23, h: 46 },
+    // Taller person in middle
+    { id: 6, label: "PERSONNEL", conf: 0.97, cls: "hostile", x: 73.5, y: 33, w: 6.5,  h: 49 },
+    // Shorter person on right
+    { id: 7, label: "PERSONNEL", conf: 0.92, cls: "hostile", x: 81.5, y: 36, w: 6.5,  h: 46 },
   ],
   lidar: []
 };
